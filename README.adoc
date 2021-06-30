@@ -1,7 +1,5 @@
 = My Thai Star by Team beastbelly during the SEP 2021
 
-develop: image:https://travis-ci.com/devonfw/my-thai-star.svg?branch=develop["build-status",link="https://travis-ci.com/devonfw/my-thai-star"]
-
 This repository contains the extended and improved MyThaiStar application made by **team beastbelly** during the **SEP 2021** of the **Mannheim University of Applied Sciences** in cooperation with **Capgemini**.
 The original project created by **Capgemini** can be found link:https://github.com/devonfw/my-thai-star[here].
 All rights remain with **Capgemini**.
