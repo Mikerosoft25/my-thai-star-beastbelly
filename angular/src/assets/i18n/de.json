@@ -1,0 +1,335 @@
+{
+  "buttons": {
+    "cancel": "Abbrechen",
+    "apply": "Bestätigen",
+    "close": "Schließen",
+    "send": "Senden",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "bookTable": "Tisch buchen",
+    "inviteFriends": "Freunde einladen",
+    "viewMenu": "Menü ansehen",
+    "addToOrder": "Zur Bestellung hinzufügen",
+    "clearFilters": "Filter zurücksetzen",
+    "applyFilters": "Filter anwenden",
+    "removeComment": "Kommentar entfernen",
+    "addComment": "Kommentar hinzufügen",
+    "delete": "Löschen",
+    "cancelOrder": "Bestellung stornieren",
+    "cancelReservation": "Reservierung stornieren"
+  },
+  "table": {
+    "rowsPage": "Zeilen pro Seite",
+    "of": "von",
+    "noResults": "Keine Ergebnisse"
+  },
+  "alerts": {
+    "accessError": "Zugang verweigert, bitte erst einloggen",
+    "genericError":"Ein Fehler ist aufgetreten, bitte versuche es später noch einmal",
+    "urlError": "Url nicht gefunden, bitte versuche es noch einmal",
+    "email confirmations": {
+      "invitationAccept": "Einladung erfolgreich angenommen",
+      "invitationReject": "Einladung erfolgreich abgelehnt",
+      "bookingCancel": "Buchung erfolgreich abgebrochen",
+      "orderCancel": "Bestellung erfolgreich abgebrochen"
+    },
+    "orderID": "Zum Bestellen ist eine Buchungs-ID notwendig. Gib entweder eine bereits bestehende Buchungs-ID ein oder buch einen Tisch.",
+    "passwordError": "Die Passwörter stimmen nicht überein",
+    "authAlerts": {
+      "loginSuccess": "Anmeldung erfolgreich",
+      "loginFail":"Anmeldung fehlgeschlagen",
+      "registerSuccess": "Registrierung erfolgreich",
+      "registerFail": "Registrierung fehlgeschlagen, Benutzername oder E-Mail bereits in Verwendung",
+      "logoutSuccess": "Abmeldung erfolgreich, komme bald wieder!",
+      "changeSuccess": "Änderung erfolgreich durchgeführt",
+      "changeFail": "Änderung fehlgeschlagen",
+      "deleteSuccess": "Nutzer wurde erfolgreich gelöscht",
+      "addUserSuccess": "Nutzer wurde erfolgreich gelöscht",
+      "addUserFail": "Nutzer konnte nicht hinzugefügt werden. Benutzername oder Email bereits in Verwendung",
+      "deleteFail": "Du kannst dich nicht selber löschen",
+      "resetSuccess": "Eine Email wurde erfolgreich geschickt an",
+      "resetFail": "Es konnte kein Link zum Zurücksetzen des Passwortes geschickt werden",
+      "reservationDeleteSuccess" : "Die Reservierung wurde erfolgreich gelöscht",
+      "reservationDeleteFail" : "Die Reservierung kann nicht gelöscht werden",
+      "orderDeleteSuccess" : "Diese Bestellung wurde erfolgreich gelöscht",
+      "OrderDeleteFail" : "Die Bestellung kann nicht gelöscht werden",
+      "orderSendSuccess":"Bestellung war erfolgreich",
+      "orderSendFail":"Ungültige Buchungs-ID",
+      "noPayment": "Diese Bestellung kann ohne Zahlung nicht abgeschlossen werden"
+    }
+  },
+  "formFields": {
+    "username": "Benutzername",
+    "password": "Passwort",
+    "token": "Einmalpasswort",
+    "confirmPassword": "Passwort bestätigen",
+    "date": "Datum",
+    "name": "Name",
+    "email": "Email",
+    "role": "Rolle",
+    "inHouse": "Inhouse Bestellung",
+    "table": "Tischnummer",
+    "assistants": "Tischgäste",
+    "friends": "Freunde",
+    "terms": "Bedingungen akzeptieren",
+    "dateTime": "Datum und Uhrzeit",
+    "guests": "Gäste (bitte nach jeder eingegebenen E-Mail-Adresse Enter drücken)",
+    "guestsPH": "Gib die Einladungs-Email ein",
+    "comment": "Kommentar",
+    "total": "Gesamt",
+    "referenceNumber": "Referenznummer",
+    "orderStatus": "Bestellungsstatus",
+    "orderPayStatus": "Bezahlstatus",
+    "bookingDate":"Reservierungsdatum"
+  },
+  "bookTable": {
+    "title": "Du kannst deine Freunde zum Mittagessen einladen oder einen Tisch buchen",
+    "bookTabImage": "Einige der Gerichte, die Sie in unserem Restaurant finden können",
+    "bookingTab": "Tisch buchen",
+    "reservationTab": "Freunde einladen",
+    "reservationTabImage": "Unsere Kunden genießen den Service unseres Restaurants",
+    "bookingTitle": "Buche deinen Tisch",
+    "bookingSubtitle": "Du kannst einen Tisch buchen und ein Menü bestellen",
+    "reservationTitle": "Füge deine Details und Freunde hinzu",
+    "dialog": {
+      "title": "Tisch buchen",
+      "bookingSuccess": "Tisch erfolgreich gebucht",
+      "bookingError": "Buchungsfehler, bitter versuche es später erneut"
+    },
+    "confirmationdialog": {
+      "title": "Ihre Buchung war erfolgreich!",
+      "confirmation": "Es wurde eine E-Mail mit den Details ihrere Buchung an die folgende E-Mail-Adresse gesendet:",
+      "token": "Die in dieser E-Mail enthaltene Buchungs-ID benötigen Sie, um eine zur Buchung zugehörige Bestellung abzuschließen"
+    },
+    "formErrors": {
+      "nameRequired": "Pflichtfeld. Bitte gib ein Namen ein, um den Tisch zu buchen",
+      "emailRequired": "Pflichtfeld. Bitte gib eine Email ein, um den Tisch zu buchen",
+      "emailPattern": "Gib eine gültige Emailadresse ein um die Reservierung abzuschicken z.B. email@email.com.",
+      "emailFormat": "Emailformat nicht gültig",
+      "assistantsRequired": "Pflichtfeld. Bitte gib die Teilnehmeranzahl ein",
+      "assistantsMax": "Du kannst nicht für mehr Teilnehmer buchen als für die groesste Tischgroesse (8), wenn du mehrere Tische brauchst, buche mehrmals.",
+      "assistantsMin": "Du kannst nicht für eine leere oder negative Teilnehmeranzahl buchen"
+    }
+  },
+  "main": {
+    "home": "Startseite",
+    "menu": "Menü",
+    "book": "Tisch buchen",
+    "orders": "Bestellungen",
+    "reservations": "Reservierungen",
+    "userReservations" : "Meine Reservierungen",
+    "userOrders" : "Meine Bestellungen",
+    "orderarchived": "Archivierte Bestellungen",
+    "userActions": {
+      "user": "Benutzer",
+      "pairing": "Zwei-Faktor-Authentifizierung einstellen",
+      "logout": "Abmelden",
+      "changePassword": "Passwort ändern",
+      "twitterAccount": "Twitteraccount",
+      "signOut": "Abmelden",
+      "orders": "Bestellungen"
+    },
+    "admin": {
+      "manage":"Nutzer verwalten",
+      "add": "Nutzer hinzufügen"
+    }
+  },
+  "home": {
+    "subtitle": "Mehr als nur leckeres Essen",
+    "restaurantTitle": "Unser Restaurant",
+    "restaurantImage": "Einer unserer Kunden liest ein Buch, während er sein Essen genießt",
+    "restaurantContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum tellus eget volutpat porta. Duis pellentesque velit venenatis, tincidunt ligula ac, rhoncus felis. Donec aliquam nulla id turpis dignissim laoreet. Vestibulum sit amet ante eu lacus convallis lobortis sit amet eu orci. Nam vitae felis ac nisi accumsan faucibus.",
+    "menuTitle": "Unser Menü",
+    "menuImage": "In unserer Speisekarte finden Sie eine Reihe köstlicher Gerichte zur Auswahl",
+    "menuContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum tellus eget volutpat porta. Duis pellentesque velit venenatis, tincidunt ligula ac, rhoncus felis. Donec aliquam nulla id turpis dignissim laoreet. Vestibulum sit amet ante eu lacus convallis lobortis sit amet eu orci. Nam vitae felis ac nisi accumsan faucibus."
+  },
+  "menu": {
+    "filterTitle": "FILTER",
+    "filter": {
+      "search": "Durchsuche unsere Gerichte",
+      "sort": "Sortieren nach",
+      "price": "Preis",
+      "likes": "Likes",
+      "name": "Name",
+      "mainDishes": "Hauptgerichte",
+      "starters": "Vorspeisen",
+      "desserts": "Desserts",
+      "noodle": "Nudeln",
+      "rice": "Reis",
+      "curry": "Curry",
+      "vegan": "Vegan",
+      "vegetarian": "Vegetarisch",
+      "favourites": "Favouriten",
+      "drinks": "Getränke"
+    }
+  },
+  "sidenav": {
+    "title": "Buchung abschließen",
+    "header": "Bestellmenü",
+    "bookingId": "Buchungs-ID",
+    "noSelection": "Du hast keine Bestellung ausgewählt",
+    "dialog": {
+      "title": "Füge einen Kommentar hinzu",
+      "content": "Hier kannst du unseren Köchen einen kurzen Kommentar hinterlassen, wie sie dein Gericht zubereiten sollen"
+    }
+  },
+  "userArea": {
+    "loginTitle": "ANMELDEN",
+    "signupTitle": "REGISTRIEREN",
+    "emailError": "Bitte gib eine gültige Emailadresse ein",
+    "passwordDialog": {
+      "title": "Neues Passwort",
+      "currentPassword": "Aktuelles Passwort",
+      "newPassword": "Neues Passwort",
+      "verifyPassword": "Passwort bestätigen"
+    },
+    "twitterDialog": {
+      "title": "Verknüpfe deinen Twitteraccount",
+      "twitterUsernamePH": "Twitter Benutzername",
+      "twitterPasswordPH": "Twitter Passwort",
+      "loginbutton": "In Twitter anmelden"
+    },
+    "qrcodeDialog": {
+      "twofactorNotFound": "Zwei-Faktor-Authentifizierung wurde noch nicht aktiviert",
+      "twofactorTitle": "Einstellungen für Zwei-Faktor-Authentifizierung",
+      "twofactorStatus": "Status der Zwei-Faktor-Authentifizierung",
+      "twofactorDescription": "Bitte scannen Sie den QR Code mit dem Google Authenticator ein oder nutzen Sie den geheimen Schlüssel",
+      "twofactorclose": "Schließen",
+      "qrSwitchText": "QR Code",
+      "secretSwitchText": "Geheimer Schlüssel"
+    }
+  },
+  "cockpit": {
+    "filter": "Filter",
+    "selectOptions": {
+      "noSelection" : "Keine Auswahl",
+      "paid":"Bezahlt",
+      "notpaid":"Nicht bezahlt",
+      "inhouse":"Inhouse Bestellung",
+      "delivery":"Lieferung"
+    },
+    "orders": {
+      "title": "Bestellungen",
+      "dialogTitle": "BESTELLDETAILS - REFERENZNUMMER",
+      "dialogTable": {
+        "dishH": "Gericht",
+        "commentsH": "Kommentare",
+        "extrasH": "Extra",
+        "quantityH": "Anzahl",
+        "priceH": "Preis",
+        "deleteButtonH": "Löschen",
+        "checkH": "Auswählen"
+      }
+    },
+    "orderAdd":{
+      "dialogTitle":"Bestellungen hinzufügen"
+    },
+    "reservations": {
+      "title": "Reservierungen",
+      "dialogTitle": "RESERVIERUNGSDETAILS - REFERENZNUMMER",
+      "dialogTable": {
+        "guestEmailH": "Gäste email",
+        "acceptanceH": "Zusagen und Absagen",
+        "assistantsH": "Teilnehmer"
+      }
+    },
+    "table": {
+      "reservationDateH": "Reservierungsdatum",
+      "nameH": "Name",
+      "bookingTokenH": "Referenznummer",
+      "ownerH": "Eigentümer",
+      "tableH": "Tisch",
+      "creationDateH": "Erstelldatum",
+      "statusH": "Status",
+      "editButtonH": "Verwalten",
+      "payStatusH": "Bezahlstatus",
+      "arrowH": "nächster Status",
+      "paid": "bezahlt",
+      "bookingTypeH": "Art",
+      "emailH": "E-mail",
+      "assistantsH": "Teilnehmeranzahl"
+    }
+  },
+  "admin": {
+    "title": "Admin-Cockpit",
+    "filter": "Filter",
+    "usernameH":"Benutzername",
+    "emailH": "Email",
+    "registrationDateH": "Registriert seit",
+    "roleH": "Rolle",
+    "editButtonH": "Verwalten",
+    "useradd":{
+      "title":"Hinzufügen eines neuen Nutzers",
+      "subtitle":"Hier können Sie einen neuen Benutzer zusammen mit seiner Rolle hinzufügen",
+      "usertab":"Hier können sie einen neuen Nutzer hinzufügen und eine Rolle im System zuweisen",
+      "image":"Default Bild für User Seite",
+      "roleDefault":"Standard: Customer (Kunde)",
+      "formErrors":{
+        "nameRequired":"Bitte gib einen Benutzernamen ein.",
+        "emailRequired":"Bitte gib eine Email ein.",
+        "passwordRequired":"Bitte gib ein Passwort ein.",
+        "passwordConfirmRequired":"Bitte bestätige dein Passwort.",
+        "roleRequired":"Pflichtfeld. Bitte gib eine Role an, um einen Nutzer hinzuzufügen",
+        "nameShort":"Benutzername muss mind. 4 Zeichen lang sein.",
+        "namePattern":"Ungültiger Name.",
+        "passwordShort":"Passwort muss mind. 6 Zeichen haben.",
+        "emailPattern":"Ungültige Email.",
+        "passwordMatch":"Passwörter stimmen nicht überein."
+      }
+    },
+    "usermanage":{
+      "title":"Verwalten des Nutzers",
+      "changeName":"Den Benutzernamen ändern",
+      "changeMail":"Die Email-Adresse ändern",
+      "password":"Passwort",
+      "role" : "Rolle",
+      "noChangeRole":"Rolle (nicht änderbar)",
+      "delete":"Löschen",
+      "resetPassword":"Passwort zurücksetzen",
+      "agree":"Bestätigen",
+      "deleteUser": {
+        "title": "Nutzer löschen",
+        "agree": "Ja",
+        "disagree": "Nein",
+        "deleteQuestion":"Wollen Sie diesen Nutzer wirklich löschen?",
+        "areYouSure" : "Diese Aktion kann nicht mehr rückgängig gemacht werden!"
+      },
+      "formErrors":{
+        "nameRequired":"Bitte gib einen Namen ein",
+        "emailRequired":"PBitte gib eine Email ein",
+        "emailPattern": "Ungültige E-Mail-Adresse"
+      }
+    },
+    "resetPassword": {
+      "greeting" : "Hallo",
+      "resetText1":"Hier kannst du ein neues Passwort wählen.",
+      "resetText2":"Bitte wähle ein Passwort, das nicht leicht zu erraten ist.",
+      "resetText3":"Es wird empfohlen, ein Passwort zu wählen, das du nirgendwo anders verwendest.",
+      "enterPassword":"Neues Passwort",
+      "confirmPassword":"Neues Passwort bestätigen",
+      "resetMyPassword": "Passwort zurücksetzen",
+      "tooShortPassword":"Passwort muss mind. 6 Zeichen haben.",
+      "passwordConfirm":"Passwörter stimmen nicht überein.",
+      "invalidToken": {
+        "text1": "Ups, da ist etwas schief gelaufen!",
+        "text2": "Wie es aussieht ist der Token für das Zurücksetzen deines Passwortes nicht mehr gültig, wende dich bitte an einen Admin, um einen neuen Token zu erhalten.",
+        "hint": "Hinweis",
+        "hintText":"Ein Token ist nur für eine begrenzte Zeit verfügbar.",
+        "redirectText1": "Du wirst wirst in",
+        "redirectText2": "Sekunden auf die Startseite weitergeleitet."
+      }
+    }
+  },
+  "inviteFriend" : {
+    "date" : "Datum",
+    "assistants" : "Teilnehmer",
+    "time" : "Uhrzeit",
+    "invited" : "Eingeladen von",
+    "expire" : "Einladung läuft ab in",
+    "inviteMessage" : "Hey, du wurdest eingeladen!",
+    "nextTime" :"Vielleicht nächstes Mal!",
+    "failure" : "Der Einladungslink ist nicht mehr gültig, da du ihn schonmal betätigt hast.",
+    "failureExpires" : "Der Einladungslink ist abgelaufen."
+  }
+
+}

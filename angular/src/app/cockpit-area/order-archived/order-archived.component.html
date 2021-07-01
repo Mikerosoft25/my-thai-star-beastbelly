@@ -1,0 +1,263 @@
+<form (ngSubmit)="applyFilters()" #filterForm="ngForm">
+  <div>
+    <mat-expansion-panel data-name="orderFilter">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ 'cockpit.filter' | transloco }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="formRow">
+        <div class="formMobileRow">
+          <!-- Name filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.name' | transloco"
+              [(ngModel)]="filters.name"
+              name="name"
+            />
+          </mat-form-field>
+          <!-- Booking-ID filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.referenceNumber' | transloco"
+              [(ngModel)]="filters.bookingToken"
+              name="bookingToken"
+            />
+          </mat-form-field>
+          <!-- Booking date filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.bookingDate' | transloco"
+              [(ngModel)]="filters.bookingDate"
+              name="bookingDate"
+              [ngModelOptions]="{ standalone: true }"
+              [owlDateTimeTrigger]="time2"
+              [owlDateTime]="time2"
+            />
+            <span [owlDateTimeTrigger]="time2"
+              ><i class="fa fa-calendar"></i
+            ></span>
+            <owl-date-time
+              [pickerType]="'calendar'"
+              [pickerMode]="'dialog'"
+              #time2
+            ></owl-date-time>
+          </mat-form-field>
+        </div>
+        <div class="formDesktopRow">
+          <!-- Booking tyoe filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <mat-select
+              [placeholder]="'formFields.inHouse' | transloco"
+              [(ngModel)]="inHouseText"
+              name="inHouse"
+              (ngModelChange)="filterInhouse($event)"
+            >
+              <mat-option
+                *ngFor="let options of selectOptionsInhouse"
+                [value]="options.label"
+              >
+                {{ options.label }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- Booking date filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.bookingDate' | transloco"
+              [(ngModel)]="filters.bookingDate"
+              name="bookingDate"
+              [ngModelOptions]="{ standalone: true }"
+              [owlDateTimeTrigger]="time1"
+              [owlDateTime]="time1"
+            />
+            <span [owlDateTimeTrigger]="time1"
+              ><i class="fa fa-calendar"></i
+            ></span>
+            <owl-date-time
+              [pickerType]="'calendar'"
+              [pickerMode]="'dialog'"
+              #time1
+            ></owl-date-time>
+          </mat-form-field>
+          <!-- Name filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.name' | transloco"
+              [(ngModel)]="filters.name"
+              name="name"
+            />
+          </mat-form-field>
+          <!-- Table-ID filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <mat-select
+              [placeholder]="'formFields.table' | transloco"
+              [(ngModel)]="filters.tableId"
+              name="tableId"
+            >
+              <mat-option>{{ selectOptionsInhouse[0].label }}</mat-option>
+              <mat-option *ngFor="let table of tables" [value]="table.id">
+                {{ table.id }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- Booking-ID filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.referenceNumber' | transloco"
+              [(ngModel)]="filters.bookingToken"
+              name="bookingToken"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="align-right">
+        <!-- Button to clear all filter criteria from the filter area -->
+        <button
+          class="orderClearFilters"
+          name="orderClearFilters"
+          mat-button
+          type="button"
+          (click)="clearFilters(filterForm)"
+        >
+          {{ 'buttons.clearFilters' | transloco }}
+        </button>
+        <!-- Button to apply filters -->
+        <button
+          class="orderApplyFilters"
+          name="orderApplyFilters"
+          mat-button
+          type="submit"
+          color="accent"
+        >
+          {{ 'buttons.applyFilters' | transloco }}
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</form>
+<mat-progress-bar *ngIf="!orders" color="accent" mode="indeterminate">
+</mat-progress-bar>
+<mat-card>
+  <mat-card-title>{{ 'cockpit.orders.title' | transloco }}</mat-card-title>
+  <mat-divider></mat-divider>
+
+  <div class="tableContainer">
+    <table
+      mat-table
+      [dataSource]="orders"
+      matSort
+      (matSortChange)="sort($event)"
+    >
+      <!-- Booking type Column -->
+      <ng-container matColumnDef="booking.bookingType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[6].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <!-- A different symbol is shown depending on the type of the booking -->
+          <div
+            *ngIf="element.booking.bookingType != 'DELIVERY'; else elseBlock"
+          >
+            <mat-icon>house</mat-icon>
+          </div>
+          <ng-template #elseBlock>
+            <mat-icon>local_shipping</mat-icon>
+          </ng-template>
+        </td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="booking.bookingDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[0].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.booking.bookingDate | amFromUnix | amDateFormat: 'lll' }}
+        </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="booking.name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[1].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.booking.name }}</td>
+      </ng-container>
+
+      <!-- TableId Column -->
+      <ng-container matColumnDef="booking.table.id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[2].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.booking.tableId }}
+        </td>
+      </ng-container>
+
+      <!-- Order Status Column -->
+      <ng-container matColumnDef="orderStatus.status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[3].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <span
+            class="complete-color"
+            *ngIf="element.orderStatus.status === 'Complete'"
+            >{{ element.orderStatus.status }}</span
+          >
+          <span
+            class="canceled-color"
+            *ngIf="element.orderStatus.status === 'Canceled'"
+            >{{ element.orderStatus.status }}</span
+          >
+        </td>
+      </ng-container>
+
+      <!-- Pay Status Column -->
+      <ng-container matColumnDef="orderPayStatus.payStatus">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[5].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <span
+            class="complete-color"
+            *ngIf="element.orderPayStatus.payStatus === 'Paid'"
+            >{{ element.orderPayStatus.payStatus }}</span
+          >
+          <span
+            class="canceled-color"
+            *ngIf="element.orderPayStatus.payStatus === 'Canceled'"
+            >{{ element.orderPayStatus.payStatus }}</span
+          >
+        </td>
+      </ng-container>
+
+      <!-- When a row containing an order is hovered over, the row turns a very light grey and -->
+      <!-- the cursor into a pointer to indicate that it can be clicked -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        class="hoverEffect"
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        (click)="selected(row)"
+      ></tr>
+    </table>
+  </div>
+
+  <div class="property-text-center noResults" *ngIf="orders.length === 0">
+    <h3>{{ 'table.noResults' | transloco }}.</h3>
+  </div>
+  <mat-paginator
+    #pagingBar
+    [length]="totalOrders"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizes"
+    [showFirstLastButtons]="true"
+    (page)="page($event)"
+  ></mat-paginator>
+</mat-card>

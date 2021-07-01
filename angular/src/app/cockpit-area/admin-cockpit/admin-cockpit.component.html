@@ -1,0 +1,211 @@
+<!-- Filter area -->
+<form (ngSubmit)="applyFilters()" #filterForm="ngForm">
+  <div>
+    <mat-expansion-panel data-name="userFilter">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ 'admin.filter' | transloco }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="formRow">
+        <div class="formMobileRow">
+          <!-- Username filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.username' | transloco"
+              [(ngModel)]="filters.username"
+              name="username"
+            />
+          </mat-form-field>
+          <!-- E-Mail filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.email' | transloco"
+              [(ngModel)]="filters.email"
+              name="email"
+            />
+          </mat-form-field>
+          <!-- Date filter, originally intended for user creation date, NOT NEEDED -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.date' | transloco"
+              [(ngModel)]="filters.date"
+              name="date"
+            />
+          </mat-form-field>
+          <!-- Role filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.role' | transloco"
+              [(ngModel)]="filters.userRoleId"
+              name="role"
+            />
+          </mat-form-field>
+        </div>
+        <div class="formDesktopRow">
+          <!-- Username filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.username' | transloco"
+              [(ngModel)]="filters.username"
+              name="username"
+            />
+          </mat-form-field>
+          <!-- E-mail filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <input
+              matInput
+              [placeholder]="'formFields.email' | transloco"
+              [(ngModel)]="filters.email"
+              name="email"
+            />
+          </mat-form-field>
+          <!-- Role filter -->
+          <mat-form-field color="accent" class="searchBy">
+            <mat-select
+              [placeholder]="'formFields.role' | transloco"
+              name="role"
+              [(ngModel)]="filters.userRoleId"
+              (valueChange)="filterUserRole($event)"
+            >
+              <mat-option>{{ columns[5].label }}</mat-option>
+              <mat-option
+                *ngFor="let userRole of userRoles"
+                [value]="userRole.name"
+              >
+                {{ userRole.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="align-right">
+        <!-- Button to clear all filter criteria from the filter area -->
+        <button
+          class="userClearFilters"
+          name="userClearFilters"
+          mat-button
+          type="button"
+          (click)="clearFilters(filterForm)"
+        >
+          {{ 'buttons.clearFilters' | transloco }}
+        </button>
+        <!-- Button to apply filters -->
+        <button
+          class="orderApplyFilters"
+          name="orderApplyFilters"
+          mat-button
+          type="submit"
+          color="accent"
+        >
+          {{ 'buttons.applyFilters' | transloco }}
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</form>
+<mat-progress-bar *ngIf="!users" color="accent" mode="indeterminate">
+</mat-progress-bar>
+<mat-card>
+  <mat-card-title>
+    <div>
+      <div style="float: left">{{ 'admin.title' | transloco }}</div>
+      <div style="float: right">
+        <!-- Add User button -->
+        <button mat-raised-button color="primary" (click)="selectedUser()">
+          <img
+            src="./assets/images/user7.png"
+            alt="user add"
+            height="24"
+            width="24"
+          />
+          {{ 'main.admin.add' | transloco }}
+        </button>
+      </div>
+    </div>
+  </mat-card-title>
+  <br />
+  <br />
+  <mat-divider></mat-divider>
+
+  <div class="tableContainer">
+    <table
+      mat-table
+      [dataSource]="users"
+      matSort
+      (matSortChange)="sort($event)"
+    >
+      <!-- Date Column -->
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[0].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.username }}
+        </td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[1].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
+
+      <!-- Ref No Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[2].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.date | amFromUnix | amDateFormat: 'lll' }}
+        </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="userRole">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          {{ columns[3].label }}
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.userRoleName }}
+        </td>
+      </ng-container>
+
+      <!-- Edit Button Column -->
+      <ng-container matColumnDef="editButton">
+        <th mat-header-cell *matHeaderCellDef>
+          {{ columns[4].label }}
+        </th>
+        <td class="property-text-center" mat-cell *matCellDef="let element">
+          <button
+            mat-button
+            class="cursor-pointer openUserManage"
+            (click)="selected(element)"
+          >
+            <mat-icon aria-hidden="false">settings</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      <!--for open dialog : (click)="selected(row)"-->
+    </table>
+  </div>
+  <div class="property-text-center noResults" *ngIf="users.length === 0">
+    <h3>{{ 'table.noResults' | transloco }}.</h3>
+  </div>
+  <mat-paginator
+    #pagingBar
+    [length]="totalUsers"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizes"
+    [showFirstLastButtons]="true"
+    (page)="page($event)"
+  ></mat-paginator>
+</mat-card>

@@ -1,0 +1,49 @@
+mat-tab-group {
+  margin: -16px;
+}
+
+form {
+  padding: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.formFields {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 599px) {
+  .forgotPassword {
+    cursor: pointer;
+    color: seagreen;
+    width: 60%;
+  }
+}
+
+@media (min-width: 600px) {
+  .forgotPassword {
+    cursor: pointer;
+    color: seagreen;
+    width: 25%;
+  }
+}
+
+.input-icon{
+  position: absolute;
+  left: 3px;
+  top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+}
+input{
+  padding-left: 17px;
+  padding-bottom: 1.5px;
+}
+.input-wrapper{
+  position: relative;
+}
+
+mat-select, mat-label {
+  padding-left: 17px;
+}
+

@@ -1,0 +1,45 @@
+<span mat-dialog-title>{{
+  'bookTable.confirmationdialog.title' | transloco
+}}</span>
+
+<mat-divider></mat-divider>
+
+<mat-dialog-content>
+  <div class="dataRows">
+    <div>
+      <div class="dataRow">
+        <span>{{
+          'bookTable.confirmationdialog.confirmation' | transloco
+        }}</span>
+      </div>
+    </div>
+
+    <p></p>
+
+    <!-- e-mail-address -->
+    <div>
+      <div class="dataRow">
+        <span class="emailValue">{{ data.email }}</span>
+      </div>
+    </div>
+
+    <p></p>
+
+    <div>
+      <div class="dataRow">
+        <span>{{ 'bookTable.confirmationdialog.token' | transloco }}</span>
+      </div>
+    </div>
+
+    <div>
+      <mat-divider></mat-divider>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="align-right">
+    <button name="close" mat-button mat-dialog-close (click)="refreshPage()">
+      {{ 'buttons.close' | transloco }}
+    </button>
+  </div>
+</mat-dialog-actions>

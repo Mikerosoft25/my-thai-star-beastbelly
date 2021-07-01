@@ -1,0 +1,120 @@
+.formRow {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  font-size: 16px;
+}
+
+.formDesktopRow {
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .searchBy {
+    flex: 1;
+    padding: 8px;
+  }
+}
+
+.formMobileRow {
+  flex: 1;
+  align-items: center;
+}
+
+form button,
+mat-card-title {
+  text-transform: uppercase;
+}
+
+.tableContainer {
+  width: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 600px;
+}
+
+th {
+  width: calc(25%-5px);
+  font-weight: bold;
+}
+
+td:not(:nth-child(1)) {
+  word-break: break-all;
+}
+
+.mat-column-editButton {
+  width: 20px;
+  padding-right: 0 !important;
+}
+
+.noResults {
+  padding: 16px;
+}
+
+.advance-status-button {
+  transition: ease-out 0.2s;
+  width: 150px;
+  text-align: left;
+}
+
+.advance-status-button span {
+  float: left;
+}
+
+.advance-status-button:hover {
+  background-color: #3e2723;
+  transition: ease-out 0.2s;
+  color: white !important;
+}
+
+.progressSpinnerTable {
+  margin: 0 auto;
+}
+
+.editable {
+  cursor: pointer;
+}
+
+@media (max-width: 599px) {
+  .forDesktop {
+    display: none;
+  }
+  .searchBy {
+    width: 100%;
+  }
+  .formDesktopRow {
+    display: none;
+  }
+  .formMobileRow {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 600px) {
+  .forMobile {
+    display: none;
+  }
+  .sortingBy {
+    width: 30%;
+  }
+  .searchBy {
+    width: 30%;
+  }
+  .formDesktopRow {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+  }
+  .formMobileRow {
+    display: none;
+  }
+}

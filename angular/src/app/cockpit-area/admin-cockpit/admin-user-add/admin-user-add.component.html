@@ -1,0 +1,196 @@
+<h3 mat-dialog-title>
+  {{ 'admin.useradd.title' | transloco }}
+</h3>
+<span _ngcontent-umh-c148="" class="subtitle-card">
+  {{'admin.useradd.subtitle' | transloco}}
+</span>
+<mat-divider></mat-divider>
+<br/>
+<mat-grid-list cols="2" rowHeight="550px">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" >
+    <img
+      mat-card-image
+      src="./assets/images/add10.png"
+      alt="{{ 'admin.useradd.image' | transloco }}"
+      class="forMobile mobileMenuImage"
+    />
+  </mat-grid-tile >
+
+<mat-grid-tile  [colspan]="1" [rowspan]="1">
+  <div class="UserFormContainer">
+    <form [formGroup]="userForm">
+      <table>
+        <tr>
+          <td>
+            <!-- Field in which to enter the username -->
+            <mat-form-field appearance="outline" color="accent" class="full-width-field" >
+
+              <mat-icon matPrefix>person</mat-icon>
+              <input
+                matInput
+                maxlength="20"
+                formControlName="username"
+                [placeholder]="'formFields.username' | transloco"
+                #usernameInput
+              />
+
+              <mat-hint align="end">{{usernameInput.value.length}} / 20</mat-hint>
+
+              <mat-error
+                *ngIf="username.invalid && (username.dirty || username.touched)"
+              >
+                <div *ngIf="username.errors.required">
+                  {{ 'admin.useradd.formErrors.nameRequired' | transloco }}
+                </div>
+
+                <div *ngIf="username.errors.minlength">
+                  {{ 'admin.useradd.formErrors.nameShort' | transloco }}
+                </div>
+
+                <div *ngIf="username.errors.pattern">
+                  {{ 'admin.useradd.formErrors.namePattern' | transloco }}
+                </div>
+              </mat-error>
+
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- Field in which to enter the e-mail -->
+            <mat-form-field appearance="outline" color="accent" class="full-width-field">
+              <mat-icon matPrefix>email</mat-icon>
+              <input
+                matInput
+                formControlName="email"
+                [placeholder]="'formFields.email' | transloco"
+              />
+              <mat-error
+                *ngIf="email.invalid && (email.dirty || email.touched)"
+              >
+                <div *ngIf="email.errors.required">
+                  {{ 'admin.useradd.formErrors.emailRequired' | transloco }}
+                </div>
+
+                <div *ngIf="email.errors.pattern">
+                  {{ 'admin.useradd.formErrors.emailPattern' | transloco }}
+                </div>
+              </mat-error>
+
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- Field in which to enter the password -->
+            <mat-form-field appearance="outline" color="accent" class="full-width-field">
+
+              <mat-icon matPrefix>lock</mat-icon>
+              <input
+                type="password"
+                matInput
+                [placeholder]="'formFields.password' | transloco"
+                formControlName="password"
+              />
+
+              <mat-error
+                *ngIf="password.invalid && (password.dirty || password.touched)"
+              >
+                <div *ngIf="password.errors.required">
+                  {{ 'admin.useradd.formErrors.passwordRequired' | transloco }}
+                </div>
+                <div *ngIf="password.errors.minlength">
+                  {{ 'admin.useradd.formErrors.passwordShort' | transloco }}
+                </div>
+              </mat-error>
+
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- Field in which to enter the password once more in order to ensure that is has been correctly typed -->
+            <mat-form-field appearance="outline" color="accent" class="full-width-field">
+
+              <mat-icon matPrefix>enhanced_encryption</mat-icon>
+              <input
+                type="password"
+                matInput
+                [placeholder]="'formFields.confirmPassword' | transloco"
+                formControlName="passwordConfirm"
+              />
+
+              <mat-error
+                *ngIf="
+                  passwordConfirm.invalid &&
+                  (passwordConfirm.dirty || passwordConfirm.touched)
+                "
+              >
+                <div *ngIf="passwordConfirm.errors.required">
+                  {{
+                    'admin.useradd.formErrors.passwordConfirmRequired'
+                      | transloco
+                  }}
+                </div>
+                <div  *ngIf="userForm.get('passwordConfirm').hasError('notSame')">
+                  {{
+                    'admin.useradd.formErrors.passwordMatch' | transloco
+                  }}
+                </div>
+              </mat-error>
+
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- Field in which to enter the role -->
+            <mat-form-field appearance="outline" class="roleField full-width-field" color="accent">
+
+              <mat-icon matPrefix>people</mat-icon>
+              <mat-select
+              formControlName="role"
+              [placeholder] ="'formFields.role' | transloco">
+
+                <mat-option
+                  *ngFor="let userRole of userRoles"
+                  [value]="userRole.name"
+                >
+                  {{ userRole.name }}
+                  <!-- value gets sent with the form -->
+                </mat-option>
+              </mat-select>
+
+              <mat-hint>
+                <div>
+                  {{ 'admin.useradd.roleDefault' | transloco }}
+                </div>
+              </mat-hint>
+
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr style="margin-top: 5%">
+          <td style="text-align: right;">
+            <!-- submits the data of the new user to the system -->
+            <button mat-raised-button
+              name="applyUserChanges"
+              mat-button  type="button"
+              (click)="addUserbyAdmin()"
+              [disabled]="!userForm.valid"
+              color="primary"
+              class="applyUserChanges">
+                <img src="./assets/images/check.png"
+                  alt="user add"
+                  height="12"
+                  width="16">
+
+                {{ 'admin.usermanage.agree' | transloco }}
+
+              </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</mat-grid-tile>

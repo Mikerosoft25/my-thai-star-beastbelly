@@ -1,0 +1,194 @@
+<h3 mat-dialog-title style="text-align: left">
+  {{ 'admin.usermanage.title' | transloco }}:
+  {{ user.username }}
+</h3>
+<mat-divider style="margin-bottom: 2%"></mat-divider>
+
+<mat-grid-list cols="4">
+  <mat-grid-tile [colspan]="1" [rowspan]="2">
+    <img
+      mat-card-image
+      src="./assets/images/edit111.png"
+      alt="{{ 'admin.useradd.image' | transloco }}"
+      class="forMobile mobileMenuImage"
+    />
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="3" [rowspan]="2">
+    <div class="UserFormContainer">
+      <form [formGroup]="userForm">
+        <table>
+          <tr>
+            <td>{{ 'admin.usermanage.changeName' | transloco }}:</td>
+            <td></td>
+            <td>
+              <mat-form-field appearance="outline">
+                <!-- Username, changeable -->
+                <mat-label>{{ user.username }}</mat-label>
+                <input
+                  class="username"
+                  matInput
+                  placeholder="{{ user.username }}"
+                  formControlName="username"
+                />
+                <mat-error
+                  *ngIf="
+                    username.invalid && (username.dirty || username.touched)
+                  "
+                >
+                  <div *ngIf="username.errors.required">
+                    {{ 'admin.usermanage.formErrors.nameRequired' | transloco }}
+                  </div>
+                  <div *ngIf="username.errors.minlength">
+                    {{ 'admin.useradd.formErrors.nameShort' | transloco }}
+                  </div>
+                  <div *ngIf="username.errors.pattern">
+                    {{ 'admin.useradd.formErrors.namePattern' | transloco }}
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>{{ 'admin.usermanage.changeMail' | transloco }}:</td>
+            <td></td>
+            <td>
+              <mat-form-field appearance="outline">
+                <!-- E-Mail, changeable -->
+                <mat-label>{{ user.email }}</mat-label>
+                <input
+                  class="email"
+                  matInput
+                  placeholder="{{ user.email }}"
+                  formControlName="email"
+                />
+                <!--<mat-hint>Changing the E-mail</mat-hint>-->
+                <mat-error
+                  *ngIf="email.invalid && (email.dirty || email.touched)"
+                >
+                  <div *ngIf="email.errors.required">
+                    {{
+                      'admin.usermanage.formErrors.emailRequired' | transloco
+                    }}
+                  </div>
+                  <div *ngIf="email.errors.pattern">
+                    {{ 'admin.usermanage.formErrors.emailPattern' | transloco }}
+                  </div>
+                </mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>{{ 'admin.usermanage.password' | transloco }}:</td>
+            <td></td>
+            <td>
+              <!-- Password, changeable -->
+              <mat-form-field appearance="outline" style="margin-top: 0.6%">
+                <input
+                  [disabled]="canChangePassword"
+                  matInput
+                  [type]="hide ? 'password' : 'text'"
+                  #passwordInput
+                />
+                <mat-hint *ngIf="tooShortPassword" style="color: red">{{
+                  'admin.resetPassword.tooShortPassword' | transloco
+                }}</mat-hint>
+                <button
+                  mat-icon-button
+                  [disabled]="canChangePassword"
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon matSuffix>{{
+                    hide ? 'visibility_off' : 'visibility'
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>{{ 'admin.usermanage.role' | transloco }}:</td>
+            <td></td>
+            <td>
+              <mat-form-field appearance="outline">
+                <!-- Username, not changeable -->
+                <mat-label>{{ user.userRoleName }}</mat-label>
+                <input matInput disabled placeholder="user.userRole" />
+                <mat-hint>{{
+                  'admin.usermanage.noChangeRole' | transloco
+                }}</mat-hint>
+              </mat-form-field>
+            </td>
+          </tr>
+
+          <tr>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;</td>
+          </tr>
+
+          <tr style="margin-top: 4%">
+            <td style="text-align: left">
+              <!-- delete user button -->
+              <button
+                [disabled]="noAdminDelete()"
+                mat-raised-button
+                color="warn"
+                (click)="openDeleteUser()"
+                type="button"
+              >
+                <img
+                  src="./assets/images/bin.png"
+                  alt="user add"
+                  height="21"
+                  width="21"
+                />
+                {{ 'admin.usermanage.delete' | transloco }}
+              </button>
+            </td>
+            <td style="text-align: center; padding-left: 50px">
+              <!-- password reset button -->
+              <button
+                mat-raised-button
+                color="primary"
+                [disabled]="checkPassword"
+                (click)="resetPassword()"
+              >
+                <img
+                  src="./assets/images/reset.png"
+                  alt="user add"
+                  height="21"
+                  width="21"
+                />
+                {{ 'admin.usermanage.resetPassword' | transloco }}
+              </button>
+            </td>
+            <td style="text-align: right">
+              <!-- button to submit changes to the selected user -->
+              <button
+                mat-raised-button
+                name="applyUserChanges"
+                mat-button
+                (click)="applyUserChanges()"
+                type="button"
+                [disabled]="!userForm.valid"
+                color="accent"
+                class="applyUserChanges"
+              >
+                <img
+                  src="./assets/images/check.png"
+                  alt="user add"
+                  height="12"
+                  width="16"
+                />
+                {{ 'admin.usermanage.agree' | transloco }}
+              </button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

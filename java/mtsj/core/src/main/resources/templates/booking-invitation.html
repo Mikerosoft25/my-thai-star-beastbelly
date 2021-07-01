@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Booking-Invitation</title>
+
+	<style type="text/css">
+		.container {
+			width: 700px;
+			height: 100%;
+			margin: auto;
+			padding: 5px;
+			font-size: 18px;
+			font-family: Helvetica, Arial;
+		}
+
+		.header {
+			height: 50px;
+			width: 100%;
+		}
+
+		p, body, h1, div {
+			margin: 0;
+			padding: 0;
+		}
+
+		.buttonContainer {
+			text-align: center;
+		}
+
+		.resetUrl {
+			text-decoration: none;
+			width: 250px;
+			height: 30px;
+			margin: auto;
+		}
+
+		.resetButton {
+			text-align: center;
+			display: block;
+			font-size: 18px;
+			border: none;
+			border-radius: 5px;
+			background-color: #3e2723;
+			width: 250px;
+			height: 30px;
+			line-height: 30px;
+			margin: 40px auto;
+			text-decoration: none;
+			color: white;
+		}
+
+		.resetButton:hover {
+			cursor: pointer;
+		}
+
+		.bannerImage {
+			width: 700px;
+			height: 109px;
+			margin-bottom: 20px;
+		}
+
+		.footerImage {
+			margin-top: 50px;
+			width: 700px;
+			height: 246px;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin: auto;
+		}
+
+		tr {
+			border-top: 1px solid rgba(0, 0, 0, 0.12);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+			font-size: 18px;
+		}
+
+		th {
+			font-size: 20px;
+		}
+
+		table .leftCol {
+			text-align: left;
+			padding-left: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-weight: 600;
+		}
+
+		table .rightCol {
+			text-align: right;
+			padding-right: 10px;
+			height: 20px;
+		}
+
+		.tableHeader {
+			text-align: center;
+			font-size: 24px;
+			margin: 30px 0px 20px 0px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img class="bannerImage" src='cid:myThaiStarBannerImage' width="700px" height="109px">
+		<p>Hello <span th:text="${invitedEmail}"></span>,</p>
+		<br>
+		<div th:switch="${mailType}">
+			<div th:case="'invite'">
+				<p>You have been invited by <span th:text="${hostName}"></span> to eat at our restaurant!</p>
+				<p>Below you can find all the details regarding the booking.</p>
+			</div>
+			<div th:case="'accept'">
+				<p>You have accepted the invite by <span th:text="${hostName}"></span>.</p>
+				<p>Below you can find all the details regarding the booking.</p>
+			</div>
+			<div th:case="'decline'">
+				<p>You have declined the invite by <span th:text="${hostName}"></span>.</p>
+				<p>Below you can still find all the details regarding the booking.</p>
+			</div>
+			<div th:case="'cancel'">
+				<p>The booking by <span th:text="${hostName}"></span> that you have been invited to has been canceled.</p>
+				<p>Below you can still find all the details regarding the canceled booking.</p>
+			</div>
+		</div>
+
+		<p class="tableHeader">Booking information</p>
+
+		<table th:switch="${mailType}">
+			<tr>
+				<td class="leftCol">Reservation Date</td>
+				<td class="rightCol" th:text="${date}"></td>
+			</tr>
+			<tr>
+				<td class="leftCol">Host Name</td>
+				<td class="rightCol" th:text="${hostName}"></td>
+			</tr>
+			<tr>
+				<td class="leftCol">Host Email</td>
+				<td class="rightCol" th:text="${hostEmail}"></td>
+			</tr>
+			<tr>
+				<td class="leftCol">Attendees</td>
+				<td class="rightCol" th:text="${attendees}"></td>
+			</tr>
+			<tr>
+				<td class="leftCol">
+					<span th:if="${mailType == 'cancel'}">Status</span>
+					<span th:if="${mailType != 'cancel'}">Your invitation</span>
+				</td>
+				<td class="rightCol" th:switch="${inviteStatus}">
+					<span th:if="${mailType == 'cancel'}">
+						<span style="color: #e53935;">Canceled</span>	
+					</span>
+					<span th:if="${mailType != 'cancel'}">
+						<span th:switch="${inviteStatus}">
+							<span th:case="true" style="color: #388e3c;">Accepted</span>
+							<span th:case="false" style="color: #e53935;">Declined</span>
+							<span th:case="*" style="color: #3e2723;">Pending</span>	
+						</span>	
+					</span>
+				</td>
+<!-- 				<span th:if="${mailType == 'cancel'}">
+					<td class="leftCol">Status</td>
+					<td class="rightCol"><span style="color: #e53935;">Canceled</span></td>
+				</span>
+				<span th:if="${mailType != 'cancel'}">
+					<td class="leftCol">Your invitation</td>
+					<td class="rightCol" th:switch="${inviteStatus}">
+						<span th:case="true" style="color: #388e3c;">Accepted</span>
+						<span th:case="false" style="color: #e53935;">Declined</span>
+						<span th:case="*" style="color: #3e2723;">Pending</span>
+					</td>
+				</span> -->
+			</tr>
+		</table>
+
+		<div th:if="${mailType == 'invite'}">
+			<a class="resetUrl" style="display:block" th:href="@{${inviteURL}}">
+  				<div class="resetButton">Accept or decline the booking</div>
+			</a>
+		</div>
+
+		<br>
+		<p>Best regards,</p>
+		<p>MyThaiStar</p>
+		<img class="footerImage" src='cid:myThaiStarFooterImage' width="700px" height="246px">
+	</div>
+</body>
+</html>

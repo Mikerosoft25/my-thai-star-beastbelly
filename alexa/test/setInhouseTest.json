@@ -1,0 +1,50 @@
+{
+    "version": "1.0",
+    "session": {
+      "new": false,
+      "sessionId": "amzn1.echo-api.session.123456789012",
+      "application": {
+        "applicationId": "amzn1.ask.skill.35c21b41-e861-4aab-ae0c-42a960561483"
+      },
+      "attributes": {
+        "loaded": true,
+        "delivery": " ",
+        "isInhouse": false,
+        "orderLine": "",
+        "tableId": 0
+      },
+      "speechOutput": "Der Inhouse Modus wurde aktiviert.",
+      "repromptText": "Der Inhouse Modus wurde aktiviert."
+    },
+    "user": {
+      "userId": "amzn1.ask.account.AGMAEFGVPWYCHM4K5GQKYXN4M3ALXLVM3SQNAGPP5F72VLQGLDFDVC3Z2T26VTKTOT3CEZXBLDCIXNOH32XWKP3HURDQHXFH335FKQ2CLV6FVKHCHSXURNXGZYX26CKGV5A7FIOP7KSHIOIGLCB2XMLQIZIQI67FEU6QLGEPPNWFZV74YBZY3IAJKIUJOMYLSSQZG6ZVGGJJHDI"
+    },
+    "context": {
+      "AudioPlayer": {
+        "playerActivity": "IDLE"
+      },
+      "System": {
+        "application": {
+          "applicationId": "amzn1.ask.skill.35c21b41-e861-4aab-ae0c-42a960561483"
+        },
+        "user": {
+          "userId": "amzn1.ask.account.AGMAEFGVPWYCHM4K5GQKYXN4M3ALXLVM3SQNAGPP5F72VLQGLDFDVC3Z2T26VTKTOT3CEZXBLDCIXNOH32XWKP3HURDQHXFH335FKQ2CLV6FVKHCHSXURNXGZYX26CKGV5A7FIOP7KSHIOIGLCB2XMLQIZIQI67FEU6QLGEPPNWFZV74YBZY3IAJKIUJOMYLSSQZG6ZVGGJJHDI"
+        },
+        "device": {
+          "supportedInterfaces": {
+            "AudioPlayer": {}
+          }
+        }
+      }
+    },
+    "request": {
+      "type": "IntentRequest",
+      "requestId": "amzn1.echo-api.request.b51c6a19-fd05-4c53-9fb1-cc281b80baaf",
+      "timestamp": "2021-06-11T15:30:28Z",
+      "locale": "de-DE",
+      "intent": {
+        "name": "SetInhouseIntent",
+        "confirmationStatus": "NONE"
+      }
+    }
+  }

@@ -1,0 +1,337 @@
+{
+  "buttons": {
+    "cancel": "Cancel",
+    "apply": "Apply",
+    "close": "Close",
+    "send": "Send",
+    "login": "Login",
+    "register": "Register",
+    "bookTable": "Book Table",
+    "inviteFriends": "Invite friends",
+    "viewMenu": "View Menu",
+    "addToOrder": "Add to order",
+    "clearFilters": "Clear Filters",
+    "applyFilters": "Apply Filters",
+    "removeComment": "Remove Comment",
+    "addComment": "Add comment",
+    "delete": "Delete",
+    "cancelOrder": "Cancel Order",
+    "cancelReservation": "Cancel Reservation"
+  },
+  "table": {
+    "rowsPage": "Rows per page",
+    "of": "of",
+    "noResults": "No results to display"
+  },
+  "alerts": {
+    "accessError": "Access denied, please log in first",
+    "genericError": "An error has ocurred, please try again later",
+    "urlError": "Url not found, please try again",
+    "email confirmations": {
+      "invitationAccept": "Invitation succesfully accepted",
+      "invitationReject": "Invitation succesfully rejected",
+      "bookingCancel": "Booking succesfully canceled",
+      "orderCancel": "Order succesfully canceled"
+    },
+    "orderID": "To order a menu it is necessary to obtain a booking id. Either you enter your already known booking id or you book a table",
+    "passwordError": "Password Mismatch",
+    "authAlerts": {
+      "loginSuccess": "Login successful",
+      "loginFail": "Login failed",
+      "registerSuccess": "Register successful",
+      "registerFail": "Register failed, username or e-mail already in use",
+      "logoutSuccess": "Log out successful, come back soon!",
+      "changeSuccess": "Change made successfully",
+      "changeFail": "Change failed",
+      "deleteSuccess": "User was successfully deleted",
+      "addUserSuccess": "User was added successfully",
+      "addUserFail": "Add user failed, username or e-mail already in use",
+      "deleteFail": "You can not delete yourself",
+      "resetSuccess": "An email was successfully sent to",
+      "resetFail": "No link could be sent to reset the password.",
+      "reservationDeleteSuccess" : "Reservation has been canceled",
+      "reservationDeleteFail" : "This reservation cannot be canceled",
+      "orderDeleteSuccess" : "Order has been canceled",
+      "OrderDeleteFail" : "This order cannot be canceled",
+      "orderSendSuccess":"Order was successful",
+      "orderSendFail":"Invalid Booking-ID",
+      "noPayment": "This order can't be completed without payment"
+    }
+  },
+  "formFields": {
+    "username": "Username",
+    "password": "Password",
+    "token": "One Time Password",
+    "confirmPassword": "Confirm Password",
+    "date": "Date",
+    "inHouse": "In-House",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "table": "Table number",
+    "assistants": "Table guests",
+    "friends": "Friends",
+    "terms": "Accept terms",
+    "dateTime": "Date and time",
+    "guests": "Guests (please press enter after every e-mail-address)",
+    "guestsPH": "Enter invitation email",
+    "comment": "Comment",
+    "total": "Total",
+    "referenceNumber": "Reference number",
+    "orderStatus": "Order Status",
+    "orderPayStatus": "Pay Status",
+    "bookingDate":"Reservation Date"
+  },
+  "bookTable": {
+    "title": "You can invite your friends to lunch or book a table",
+    "bookTabImage": "Some of the meals you can find at our restaurant",
+    "bookingTab": "Book a table",
+    "reservationTab": "Invite friends",
+    "reservationTabImage": "Our clients enjoying the services of our restaurant",
+    "bookingTitle": "Book your table",
+    "bookingSubtitle": "You can book a table and an order menu",
+    "reservationTitle": "Add your information and friends",
+    "dialog": {
+      "title": "Book Table",
+      "bookingSuccess": "Table succesfully booked",
+      "bookingError": "Error booking, please try again later"
+    },
+    "confirmationdialog": {
+      "title": "Your booking has been successful!",
+      "confirmation": "An e-mail with the details of your booking has been sent to the following e-mail-address:",
+      "token": "The booking-ID contained within this e-mail will be needed to finalize an order associated with your booking"
+    },
+    "formErrors": {
+      "nameRequired": "Required. Please insert a name to reserve the table",
+      "emailRequired": "Required. Please insert an email to reserve the table",
+      "emailPattern": "Insert a valid email address to send reservation data. e.g. email@email.com.",
+      "emailFormat": "Email format not valid",
+      "assistantsRequired": "Required. Please insert the number of assistants.",
+      "assistantsMax": "You cannot reserve more assistants than the size of the biggest table (8), if you need more tables, make more bookings.",
+      "assistantsMin": "You cannot reserve an empty or negative number of assistants"
+    }
+  },
+  "main": {
+    "home": "Home",
+    "menu": "Menu",
+    "book": "Book table",
+    "orders": "Orders",
+    "reservations": "Reservations",
+    "userReservations" : "My Reservations",
+    "userOrders" : "My orders",
+    "orderarchived": "Archived Orders",
+    "userActions": {
+      "user": "User",
+      "pairing": "Set two-factor authentication",
+      "logout": "Log out",
+      "changePassword": "Change password",
+      "twitterAccount": "Twitter account",
+      "signOut": "Sign out",
+      "orders": "Orders"
+    },
+    "admin": {
+      "manage":"User Management",
+      "add": "Add User"
+    }
+  },
+  "home": {
+    "subtitle": "More than just delicious food",
+    "restaurantTitle": "Our restaurant",
+    "restaurantImage": "One of our customers reads a book while enjoying his food",
+    "restaurantContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum tellus eget volutpat porta. Duis pellentesque velit venenatis, tincidunt ligula ac, rhoncus felis. Donec aliquam nulla id turpis dignissim laoreet. Vestibulum sit amet ante eu lacus convallis lobortis sit amet eu orci. Nam vitae felis ac nisi accumsan faucibus.",
+    "menuTitle": "Our menu",
+    "menuImage": "On our menu you will find a lot of tasty dishes to choose between",
+    "menuContent": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum tellus eget volutpat porta. Duis pellentesque velit venenatis, tincidunt ligula ac, rhoncus felis. Donec aliquam nulla id turpis dignissim laoreet. Vestibulum sit amet ante eu lacus convallis lobortis sit amet eu orci. Nam vitae felis ac nisi accumsan faucibus."
+  },
+  "menu": {
+    "filterTitle": "FILTERS",
+    "filter": {
+      "search": "Search our dishes",
+      "sort": "Sort By",
+      "price": "Price",
+      "likes": "Likes",
+      "name": "Name",
+      "mainDishes": "Main dishes",
+      "starters": "Starters",
+      "desserts": "Desserts",
+      "noodle": "Noodle",
+      "rice": "Rice",
+      "curry": "Curry",
+      "vegan": "Vegan",
+      "vegetarian": "Vegetarian",
+      "favourites": "Favourites",
+      "drinks": "Drinks"
+    }
+  },
+  "sidenav": {
+    "title": "Resume Booking",
+    "header": "Order menu",
+    "bookingId": "Booking ID",
+    "noSelection": "You have not selected any order",
+    "dialog": {
+      "title": "Add a comment",
+      "content": "Here you can add a short comment to our cookers about how to prepare your dish"
+    }
+  },
+  "userArea": {
+    "loginTitle": "LOGIN",
+    "signupTitle": "SIGN UP",
+    "emailError": "Please, enter a valid email address",
+    "passwordDialog": {
+      "title": "Set new Password",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "verifyPassword": "Verify Password"
+    },
+    "twitterDialog": {
+      "title": "Associate twitter account",
+      "twitterUsernamePH": "Twitter username",
+      "twitterPasswordPH": "Twitter password",
+      "loginbutton": "Log in Twitter"
+    },
+    "qrcodeDialog": {
+      "twofactorNotFound": "Two Factor Authentication has not been activated yet",
+      "twofactorTitle": "Set up Two Factor Authentication",
+      "twofactorStatus": "Two Factor Authentication Status",
+      "twofactorDescription": "Please scan the QR code with the Google Authenticator or use the secret key",
+      "twofactorclose": "Close",
+      "qrSwitchText": "QR Code",
+      "secretSwitchText": "Secret Key"
+    }
+  },
+  "cockpit": {
+    "filter": "Filter",
+    "selectOptions": {
+      "noSelection" : "No selection",
+      "paid":"Paid",
+      "notpaid":"Pending",
+      "inhouse":"Inhouse order",
+      "delivery":"Delivery"
+    },
+    "orders": {
+      "title": "Orders",
+      "dialogTitle": "ORDER DETAILS - REFERENCE NUMBER",
+      "dialogTable": {
+        "dishH": "Dish",
+        "commentsH": "Comments",
+        "extrasH": "Extra",
+        "quantityH": "Quantity",
+        "priceH": "Price",
+        "deleteButtonH": "Delete",
+        "checkH": "Select"
+      }
+    },
+    "orderAdd":{
+      "dialogTitle":"Add orders"
+    },
+    "reservations": {
+      "title": "Reservations",
+      "dialogTitle": "RESERVATION DETAILS - REFERENCE NUMBER",
+      "dialogTable": {
+        "guestEmailH": "Guest email",
+        "acceptanceH": "Acceptances and declines",
+        "assistantsH": "Assistants"
+      }
+    },
+    "table": {
+      "reservationDateH": "Reservation Date",
+      "nameH": "Name",
+      "bookingTokenH": "Reference Number",
+      "ownerH": "Owner",
+      "tableH": "Table",
+      "creationDateH": "Creation date",
+      "statusH": "Status",
+      "editButtonH": "Manage",
+      "payStatusH": "Pay Status",
+      "arrowH": "advance Status",
+      "paid": "paid",
+      "bookingTypeH": "Type",
+      "emailH": "E-mail",
+      "assistantsH": "Assistants"
+    }
+  },
+  "admin": {
+    "title": "Admin-Cockpit",
+    "filter": "Filter",
+    "usernameH":"Username",
+    "emailH": "Email",
+    "registrationDateH": "Registration date",
+    "roleH": "Role",
+    "editButtonH": "Manage",
+    "noSelectionH": "No selection",
+    "useradd":{
+      "title":"Add a new user",
+      "subtitle":"Here you can add a new user along with his role",
+      "image":"Default image for user page",
+      "roleDefault":"Default: Customer",
+      "formErrors": {
+        "nameRequired":"Please insert a username.",
+        "emailRequired":"Please insert an email.",
+        "emailPattern": "Enter a valid email.",
+        "passwordRequired":"Please insert a password.",
+        "passwordConfirmRequired":"Please confirm your password.",
+        "roleRequired":"Please insert a role to add a user.",
+        "nameShort":"Username should contain 4 characters.",
+        "namePattern":"Invalid username.",
+        "passwordShort":"Password should contain 6 characters.",
+        "passwordMatch":"Passwords do not match."
+
+      }
+    },
+    "usermanage":{
+      "title":"Manage user",
+      "changeName":"Change the username",
+      "changeMail":"Change the mail address",
+      "password":"Password",
+      "role" : "Role",
+      "noChangeRole":"Role (cannot be altered)",
+      "delete":"Delete",
+      "resetPassword":"Reset Password",
+      "agree":"Agree",
+      "deleteUser": {
+        "title": "Remove User",
+        "agree": "Yes",
+        "disagree": "No",
+        "deleteQuestion":"Do you really want to remove this user?",
+        "areYouSure" : "This action cannot be undone!"
+      },
+      "formErrors":{
+        "nameRequired":"Please insert a username",
+        "emailRequired":"Please insert an e-mail-address",
+        "emailPattern": "E-mail-address not valid"
+      }
+    },
+    "resetPassword": {
+      "greeting" : "Hello",
+      "resetText1":"Here you can choose a new password for your account.",
+      "resetText2":"Please select a password that is not easy to guess.",
+      "resetText3":"We also advise that you choose a password that you do not use anywhere else.",
+      "enterPassword":"Enter your new password",
+      "confirmPassword":"Confirm your new password",
+      "resetMyPassword":"Reset Password",
+      "tooShortPassword":"Password must contain at least 6 characters.",
+
+      "passwordConfirm":"The passwords do not match.",
+      "invalidToken": {
+        "text1": "Oops, something’s gone wrong!",
+        "text2": "Looks like the reset-token for your password has expired, please contact an admin in order to receive a new token.",
+        "hint": "Hint",
+        "hintText":"Reset-tokens are only valid for a limited amount of time.",
+        "redirectText1": "You will be redirected to the main page in",
+        "redirectText2": "seconds."
+      }
+    }
+  },
+  "inviteFriend" : {
+    "date" : "Date",
+    "assistants" : "Assistants",
+    "time" : "Time",
+    "invited" : "Invited by",
+    "expire" : "Invitation expires in",
+    "inviteMessage" : "Hey, you have been invited!",
+    "nextTime" : "Maybe next time!",
+    "failure" : "The invitation link is no longer valid, because you have used it before.",
+    "failureExpires" : "Your invitation has expired."
+  }
+
+}

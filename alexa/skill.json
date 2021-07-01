@@ -1,0 +1,78 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:716461530584:function:42eabc5a-fc15-43d7-ad6a-6e6e29290586:Release_0"
+        },
+        "interfaces": [
+          {
+            "type": "AUDIO_PLAYER"
+          },
+          {
+            "type": "CUSTOM_INTERFACE"
+          },
+          {
+            "type": "CAN_FULFILL_INTENT_REQUEST"
+          },
+          {
+            "type": "ALEXA_PRESENTATION_HTML"
+          }
+        ],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:716461530584:function:42eabc5a-fc15-43d7-ad6a-6e6e29290586:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:716461530584:function:42eabc5a-fc15-43d7-ad6a-6e6e29290586:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:716461530584:function:42eabc5a-fc15-43d7-ad6a-6e6e29290586:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::profile:name:read"
+      },
+      {
+        "name": "alexa::profile:email:read"
+      }
+    ],
+    "privacyAndCompliance": {
+      "locales": {
+        "en-US": {}
+      }
+    },
+    "publishingInformation": {
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "de-DE": {
+          "name": "My Thai Star Alexa Hosted"
+        },
+        "en-US": {
+          "description": "Sample Full Description",
+          "examplePhrases": [
+            "Alexa open my thai star",
+            "my thai star",
+            "help"
+          ],
+          "keywords": [],
+          "name": "My Thai Star Alexa Hosted",
+          "summary": "Sample Short Description"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}

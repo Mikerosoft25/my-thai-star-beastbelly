@@ -1,0 +1,1394 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my thai star",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "Hilfe",
+                        "Ich brauche Hilfe"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "stop",
+                        "halt an"
+                    ]
+                },
+                {
+                    "name": "GetDishesIntent",
+                    "slots": [
+                        {
+                            "name": "id",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "Ich meine {id}",
+                                "{id}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Gericht mit der id {id}",
+                        "Welches Gericht hat die id {id}",
+                        "Was ist das Gericht mit der id {id}",
+                        "Was ist das Tagesgericht"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetPriceIntent",
+                    "slots": [
+                        {
+                            "name": "dish",
+                            "type": "dish",
+                            "samples": [
+                                "{dish}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Was ist der Preis für {dish}",
+                        "GIb mir nen Preis",
+                        "Wie viel für {dish}",
+                        "Ich will einen Preis wissen",
+                        "Ich will den Preis für {dish} wissen",
+                        "Was ist der Preis von {dish}",
+                        "Wie viel wird {dish} kosten",
+                        "Was kostet {dish}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SetStatusIntent",
+                    "slots": [
+                        {
+                            "name": "status",
+                            "type": "status",
+                            "samples": [
+                                "Status Nummer {status}",
+                                "{status}"
+                            ]
+                        },
+                        {
+                            "name": "orderNumber",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{orderNumber}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Setze den Status für Bestellung {orderNumber} auf {status}",
+                        "Ändere den Status für Bestellung {orderNumber} auf {status}",
+                        "Ändere den Status für {orderNumber} auf {status}",
+                        "Setze den Status für {orderNumber} auf {status}",
+                        "Setze einen neuen Status für {orderNumber}",
+                        "Setze den Status auf {status}"
+                    ]
+                },
+                {
+                    "name": "BookTableIntent",
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{date}"
+                            ]
+                        },
+                        {
+                            "name": "assistants",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "Für {assistants} Personen",
+                                "{assistants}"
+                            ]
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "samples": [
+                                "Um {time}",
+                                "{time}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Buch mir einen Tisch für {date} um {time} für {assistants} Personen",
+                        "Buch mir einen Tisch für {date} um {time} für {assistants} ",
+                        "Buch mir einen Tisch für {date} um {time} für {assistants} Leute",
+                        "Buch mir nen Tisch für {date} um {time}",
+                        "Buch mir nen Tisch",
+                        "Ich will nen Tisch buchen",
+                        "Ich möchte buchen",
+                        "Buchen",
+                        "Ich will buchen",
+                        "Ich brauche einen Tisch",
+                        "Ich will einen Tisch buchen",
+                        "Buche mir einen Tisch",
+                        "Buch mir einen Tisch",
+                        "Buchen einen Tisch",
+                        "Buch nen tisch",
+                        "Ich hab ordentlich Kohldampf",
+                        "Ich hätte hunger",
+                        "Buche einen Tisch meine Süße",
+                        "Buche einen Tisch am {date} um {time} für {assistants} Personen",
+                        "Buche einen Tisch am {date} um {time}",
+                        "Buche einen Tisch für {assistants} Personen am {date}",
+                        "Buche einen Tisch am {date}",
+                        "Buche einen Tisch",
+                        "Ich möchte einen Tisch buchen"
+                    ]
+                },
+                {
+                    "name": "OrderDishIntent",
+                    "slots": [
+                        {
+                            "name": "dish",
+                            "type": "dish",
+                            "samples": [
+                                "bestelle {dish}",
+                                "{dish} bestellen",
+                                "Ich möchte {dish} bestellen",
+                                "{dish}"
+                            ],
+                            "multipleValues": {
+                                "enabled": false
+                            }
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{number}",
+                                "{number} mal"
+                            ]
+                        },
+                        {
+                            "name": "numberExtras",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "extra",
+                            "type": "extras",
+                            "samples": [
+                                "{extra}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Füge meiner Bestellung etwas hinzu",
+                        "Ich will meiner Bestellung etwas hinzufügen",
+                        "Ich möchte meiner Bestellung etwas hinzufügen",
+                        "{dish} klingt gut",
+                        "Ich möchte {dish} mit extra {extra} bestellen",
+                        "Ich möchte meine Bestellung mit extra {extra}",
+                        "Ich möchte {extra}",
+                        "{extra}",
+                        "Ich will etwas essen",
+                        "Ich will was essen",
+                        "Bestell mir was zu Essen",
+                        "Ich habe Hunger",
+                        "Ich hab Hunger",
+                        "Ich bin hungrig",
+                        "Bestelle Essen",
+                        "Ich will Essen bestellen",
+                        "Essen bestellen",
+                        "Bestelle {dish} {number} mal mit extra {extra}",
+                        "Bestelle zusätzlich {numberExtras} mal {extra}",
+                        "Bestelle {dish} {number} mal",
+                        "Bestelle {number} mal {dish}",
+                        "Bestelle ein Gericht",
+                        "Ich möchte ein Gericht bestellen",
+                        "Ich würde gerne {dish} {number} mal bestellen",
+                        "Ich möchte {dish} bestellen",
+                        "Ich möchte eine Bestellung aufgeben",
+                        "Ich würde gerne eine Bestellung aufgeben",
+                        "Bestelle bitte {number} mal {dish}",
+                        "Mach eine Bestellung für {dish}",
+                        "Mach eine Bestellung",
+                        "Bestelle {dish}"
+                    ]
+                },
+                {
+                    "name": "AddOrderIntent",
+                    "slots": [
+                        {
+                            "name": "question",
+                            "type": "addOrder",
+                            "samples": [
+                                "{question}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{question}"
+                    ]
+                },
+                {
+                    "name": "FinishOrderIntent",
+                    "slots": [],
+                    "samples": [
+                        "schicke die Bestellung ab",
+                        "Schick ab",
+                        "Schick se ab",
+                        "Ich habe genug bestellt",
+                        "Ich bin fertig",
+                        "Bestellung abschließen",
+                        "Bestellung abschicken",
+                        "Bestellung absenden",
+                        "beende meine Bestellung"
+                    ]
+                },
+                {
+                    "name": "AddDishToOrderIntent",
+                    "slots": [
+                        {
+                            "name": "yesno",
+                            "type": "yesno",
+                            "samples": [
+                                "{yesno}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{yesno}"
+                    ]
+                },
+                {
+                    "name": "GetAllDishesIntent",
+                    "slots": [],
+                    "samples": [
+                        "Was gibt es",
+                        "Was habt ihr so",
+                        "Was steht auf der Karte",
+                        "Was gibt es denn so",
+                        "Was gibt es so",
+                        "Was gibts zu Essen",
+                        "Welche Gerichte gibt es",
+                        "Liste mir die verfügbaren Gerichte auf",
+                        "verfügbare Gerichte",
+                        "Nenne mir alle Gerichte",
+                        "Was steht auf der Speisekarte",
+                        "Welche Gerichte sind verfügbar"
+                    ]
+                },
+                {
+                    "name": "OrderBeverageIntent",
+                    "slots": [
+                        {
+                            "name": "beverage",
+                            "type": "beverage",
+                            "samples": [
+                                "{beverage} bestellen",
+                                "Ich möchte ein {beverage}",
+                                "{beverage}"
+                            ]
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{number} mal",
+                                "{number}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Ich habe Durst",
+                        "Ich will was zu trinken",
+                        "{number} mal {beverage}",
+                        "Getränk bestellen",
+                        "Ich will ein Getränk bestellen",
+                        "{beverage}",
+                        "Bestelle {number} mal {beverage}",
+                        "Ich möchte {number} mal {beverage} bestellen",
+                        "Ich möchte ein Getränk bestellen",
+                        "Bestell mir ein {beverage}",
+                        "Ich möchte ein {beverage} bestellen"
+                    ]
+                },
+                {
+                    "name": "SetInhouseIntent",
+                    "slots": [],
+                    "samples": [
+                        "Mach den Inhouse Modus an",
+                        "Inhouse Modus einschalten",
+                        "Inhousemodus",
+                        "Schalte den Inhouse Modus an",
+                        "Aktiviere den Restaurant Modus",
+                        "Schalte auf Restaurant Modus",
+                        "Dieses Gerät befindet sich im Restaurant",
+                        "Schalte auf den Inhouse Modus",
+                        "Schalte auf Inhouse",
+                        "Inhouse Modus an",
+                        "Aktiviere den Inhouse Modus"
+                    ]
+                },
+                {
+                    "name": "ChooseDeliveryIntent",
+                    "slots": [
+                        {
+                            "name": "delivery",
+                            "type": "delivery",
+                            "samples": [
+                                "{delivery}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Als {delivery}",
+                        "ich möchte {delivery} essen",
+                        "{delivery}",
+                        "Ich möchte meine Bestellung als {delivery}"
+                    ]
+                },
+                {
+                    "name": "SetTableIdIntent",
+                    "slots": [
+                        {
+                            "name": "tableId",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "Die Nummer {tableId}",
+                                "{tableId}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Gib diesem Tisch die Nummer {tableId}",
+                        "Tisch Id {tableId}",
+                        "Tischnummer {tableId}",
+                        "Ich möchte diesem Tisch die id {tableId} geben",
+                        "Ich möchte eine Tisch Id vergeben",
+                        "Setze die Tischnummer",
+                        "Setze die Tischnummer auf {tableId}",
+                        "Setze die Tisch Id auf {tableId}"
+                    ]
+                },
+                {
+                    "name": "FilterDishesIntent",
+                    "slots": [
+                        {
+                            "name": "filterCriteria",
+                            "type": "filterCriteria",
+                            "samples": [
+                                "nach {filterCriteria}",
+                                "Ich möchte nach {filterCriteria} suchen",
+                                "Ich möchte nach {filterCriteria}",
+                                "{filterCriteria}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Was gibt es {filterCriteria}",
+                        "Was kann ich {filterCriteria} bestellen",
+                        "Welche {filterCriteria} sind auf der Karte",
+                        "Was für {filterCriteria} sind auf der Karte",
+                        "Was für {filterCriteria} gibt es ",
+                        "Gib mir eine bestimmte Art von Gerichten",
+                        "Gib mir bitte alle {filterCriteria}",
+                        "Was für {filterCriteria} habt ihr",
+                        "Welche Gerichte sind {filterCriteria} auf der Karte",
+                        "Filtere die Gerichte",
+                        "Sortiere die Gerichte",
+                        "Gib mir die Gerichte der Kategorie {filterCriteria}",
+                        "Gerichte der Kategorie {filterCriteria}",
+                        "Filtere die Gerichte nach {filterCriteria}",
+                        "Filtere nach {filterCriteria}",
+                        "Welche Gerichte sind {filterCriteria}",
+                        "Gib mir alle Gerichte die ein {filterCriteria} sind",
+                        "Gib mir alle {filterCriteria}",
+                        "Was sind die {filterCriteria}"
+                    ]
+                },
+                {
+                    "name": "ListExtrasIntent",
+                    "slots": [],
+                    "samples": [
+                        "Was gibt es an extras",
+                        "Welche Extras gibt es so",
+                        "Alle Extras",
+                        "Nenne mir die Extras",
+                        "Liste mir die Extras auf",
+                        "welche Extras",
+                        "Was sind die Extras",
+                        "Welche Extras gibt es"
+                    ]
+                },
+                {
+                    "name": "ReadShoppingCartIntent",
+                    "slots": [],
+                    "samples": [
+                        "Was habe ich bisher bestellt",
+                        "Was ist im Einkaufswagen",
+                        "Was ist in meiner Bestellung",
+                        "Was habe ich bestellt",
+                        "Welche Gerichte befinden sich in meiner Bestellung",
+                        "Einkaufswagen",
+                        "Was habe ich im Einkaufswagen"
+                    ]
+                },
+                {
+                    "name": "DeleteShoppingCartIntent",
+                    "slots": [],
+                    "samples": [
+                        "Gerichte löschen",
+                        "Einkaufswagen löschen",
+                        "Lösche meine bisherige Bestellung",
+                        "Lösche meine Gerichte",
+                        "Lösche meinen Einkaufswagen"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "dish",
+                    "values": [
+                        {
+                            "id": "17",
+                            "name": {
+                                "value": "Home Made Ice Cream",
+                                "synonyms": [
+                                    "Eis",
+                                    "Eiscreme",
+                                    "Hausgemachte Eiscreme"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "14",
+                            "name": {
+                                "value": "Seared Duck",
+                                "synonyms": [
+                                    "Ente",
+                                    "Gebratene Ente"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "13",
+                            "name": {
+                                "value": "Oven Baked Fish",
+                                "synonyms": [
+                                    "Fisch",
+                                    "Ofen Fisch",
+                                    "Gebackener Fisch"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "12",
+                            "name": {
+                                "value": "Spicy Chicken Salad",
+                                "synonyms": [
+                                    "Salat mit Huhn",
+                                    "Hühner Salat",
+                                    "Hähnchen Salat scharf",
+                                    "Hähnchen Salat leicht scharf",
+                                    "leicht scharfer Hähnchen Salat",
+                                    "scharfer Hähnchen Salat",
+                                    "Hähnchen Salat"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "11",
+                            "name": {
+                                "value": "Glass Noodle Soup",
+                                "synonyms": [
+                                    "Suppe mit Glasnudeln",
+                                    "Nudelsuppe",
+                                    "Glasnudel Suppe"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "10",
+                            "name": {
+                                "value": "Crispy Fried Chicken",
+                                "synonyms": [
+                                    "Hähnchenstreifen",
+                                    "Hähnchenstreifen frittiert",
+                                    "Fritierte Hähnchenstreifen"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "9",
+                            "name": {
+                                "value": "Mochi Plate",
+                                "synonyms": [
+                                    "Mochi"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "8",
+                            "name": {
+                                "value": "Fruit Salad",
+                                "synonyms": [
+                                    "Fruchtsalat",
+                                    "Obstsalat"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "7",
+                            "name": {
+                                "value": "Fried Prawns",
+                                "synonyms": [
+                                    "Garnelen frittiert",
+                                    "Fritierte Garnelen"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "garlic paradise salad",
+                                "synonyms": [
+                                    "salad",
+                                    "PAradise Salad",
+                                    "Paradies Salat",
+                                    "Salat"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "thai thighs fish/prawns",
+                                "synonyms": [
+                                    "den Fisch",
+                                    "Fisch"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "thai peanut beef",
+                                "synonyms": [
+                                    "Rindfleisch mit Erdnuss Soße",
+                                    "Rindfleisch mit Erdnusssoße",
+                                    "Rindfleisch mit Erdnusssauce",
+                                    "Rindfleisch"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "Thai spicy basil fried rice",
+                                "synonyms": [
+                                    "Basil fried rice",
+                                    "basil Rice",
+                                    "Fried Rice"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "Thai Green Chicken curry",
+                                "synonyms": [
+                                    "Thai Curry"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "status",
+                    "values": [
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "storniert"
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "archiviert"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "wird ausgeliefert"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "wird vorbereitet"
+                            }
+                        },
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "Bestellung erhalten"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "yesno",
+                    "values": [
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "nein"
+                            }
+                        },
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "ja"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "extras",
+                    "values": [
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "nein"
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "Curry"
+                            }
+                        },
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "Tofu"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "addOrder",
+                    "values": [
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "nicht hinzufügen"
+                            }
+                        },
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "hinzufügen"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "beverage",
+                    "values": [
+                        {
+                            "id": "16",
+                            "name": {
+                                "value": "Cocktails",
+                                "synonyms": [
+                                    "Mai Tai",
+                                    "Cocktail"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "15",
+                            "name": {
+                                "value": "Home Made Lemonade",
+                                "synonyms": [
+                                    "Limo",
+                                    "Limonade",
+                                    "Hausgemachte Limonade"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "6",
+                            "name": {
+                                "value": "Tee",
+                                "synonyms": [
+                                    "Chai",
+                                    "Tea"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "Bier",
+                                "synonyms": [
+                                    "Dunkelbier",
+                                    "Dunkles",
+                                    "kühles blondes",
+                                    "Helles",
+                                    "Lager",
+                                    "Weizen",
+                                    "Beer",
+                                    "Pils"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "delivery",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Lieferung",
+                                "synonyms": [
+                                    "Zum Liefern",
+                                    "Als Lieferung",
+                                    "liefern bitte",
+                                    "liefern",
+                                    "Lieferung",
+                                    "geliefert",
+                                    "Daheim",
+                                    "zu Hause"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Restaurant",
+                                "synonyms": [
+                                    "Im Restaurant essen",
+                                    "Im Laden essen",
+                                    "Dort essen",
+                                    "Im Restaurant"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "filterCriteria",
+                    "values": [
+                        {
+                            "id": "8",
+                            "name": {
+                                "value": "Getränke",
+                                "synonyms": [
+                                    "als Getränk",
+                                    "trinken",
+                                    "zu trinken"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "7",
+                            "name": {
+                                "value": "Vegetarisch",
+                                "synonyms": [
+                                    "vegetarische Gericht",
+                                    "vegetarisches Essen",
+                                    "Vegetarische Gerichte"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "6",
+                            "name": {
+                                "value": "Vegan",
+                                "synonyms": [
+                                    "veganes Essen",
+                                    "Vegane Gerichte"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "Curry",
+                                "synonyms": [
+                                    "mit Curry",
+                                    "Essen mit Curry",
+                                    "Gerichte mit Curry",
+                                    "Curry Gerichte"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "Reisgerichte",
+                                "synonyms": [
+                                    "Gericht mit Reis",
+                                    "Essen mit Reis"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "Nudelgerichte",
+                                "synonyms": [
+                                    "Essen mit Nudeln",
+                                    "Gerichte mit Nudeln",
+                                    "Gericht mit Nudeln"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "Desserts",
+                                "synonyms": [
+                                    "Nachtische",
+                                    "Nachspeisen"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "Vorspeisen"
+                            }
+                        },
+                        {
+                            "id": "0",
+                            "name": {
+                                "value": "Hauptgerichte",
+                                "synonyms": [
+                                    "große Gerichte",
+                                    "Hauptgänge"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "GetDishesIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "id",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1482518304727.1495413660197"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetPriceIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "dish",
+                            "type": "dish",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1590829712494.1029551328744",
+                                "elicitation": "Elicit.Slot.1590829712494.1029551328744"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SetStatusIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1299965000123"
+                    },
+                    "slots": [
+                        {
+                            "name": "status",
+                            "type": "status",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1299965000123.375988640123"
+                            }
+                        },
+                        {
+                            "name": "orderNumber",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1428261144419.559509935346"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "BookTableIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.119067822507"
+                    },
+                    "slots": [
+                        {
+                            "name": "date",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1350912291378.907565989176"
+                            }
+                        },
+                        {
+                            "name": "assistants",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1350912291378.549779285619"
+                            }
+                        },
+                        {
+                            "name": "time",
+                            "type": "AMAZON.TIME",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1350912291378.371151844905"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "OrderDishIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1103160659264"
+                    },
+                    "slots": [
+                        {
+                            "name": "dish",
+                            "type": "dish",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.564407579547.1455924722304"
+                            }
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.564407579547.1081985217357"
+                            }
+                        },
+                        {
+                            "name": "numberExtras",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "extra",
+                            "type": "extras",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.553883106159.1366321733983"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AddOrderIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "question",
+                            "type": "addOrder",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.977087752296.1466388691083"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AddDishToOrderIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "yesno",
+                            "type": "yesno",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1129886304321.130036823900"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "OrderBeverageIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "beverage",
+                            "type": "beverage",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.877778099660.730424337221"
+                            }
+                        },
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.477063407573.34573702422"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ChooseDeliveryIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "delivery",
+                            "type": "delivery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.745956280151.1598006789100"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "SetTableIdIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "tableId",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.50559449490.1309772713392"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "FilterDishesIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "filterCriteria",
+                            "type": "filterCriteria",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.424375498366.1298327652393"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Confirm.Intent.582969161052",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Das Tagesgericht ist Thai Green chicken curry"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1590829712494.1029551328744",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Welches Gericht meinst du?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1590829712494.1029551328744",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Du möchtest den Preis für {dish} wissen?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1590829712494",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Der Preis für {dish} ist vierzehn Euro und fünfundsiebzig Cent"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.34757156872",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Das Tagesgericht ist Thai Green Chicken Curry"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1299965000123",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bist du sicher, dass du den Status von Bestellung {orderNumber} auf {status} ändern möchten?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Möchtest du dass ich den Status von Bestellung {orderNumber} auf {status} ändere?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1299965000123.375988640123",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Auf welchen Status möchtest du die Bestellung setzen?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1299965000123.375988640123",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Sie möchten dass ich den Bestellstatus auf {status} setze. Ist das korrekt?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1428261144419.559509935346",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Von welcher Bestellung möchtest du den Status ändern?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1428261144419.559509935346",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Möchten Sie den Status von Bestellung {orderNumber} ändern?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1482518304727.1495413660197",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Welche ID meinst du?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1350912291378.907565989176",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "An welchem Tag möchtest du einen Tisch buchen?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1350912291378.549779285619",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Für wie viele Personen möchtest du einen Tisch buchen?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1350912291378.371151844905",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Auf wie viel Uhr soll der Tisch gebucht werden?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.564407579547.1455924722304",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Was möchtest du bestellen?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.564407579547.1081985217357",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Wie oft möchtest du {dish} bestellen?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1103160659264",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bist du sicher dass du {number} mal {dish} bestellen möchtest?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.119067822507",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bist du sicher, dass du einen Tisch für {assistants} Personen am {date} um {time} Uhr buchen möchtest?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.977087752296.1466388691083",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Möchtest du deiner Buchung eine Bestellung hinzufügen?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.553883106159.1366321733983",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Möchtest du irgendwelche Extras?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.553883106159.1019841840167",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Wie oft möchten Sie {extra} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1129886304321.130036823900",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Wenn du deiner Bestellung noch etwas hinzufügen möchtest sag  'Ja'. Ansonsten sag 'Bestellung abschicken'."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.877778099660.730424337221",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Welches Getränk möchtest du bestellen?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.745956280151.1598006789100",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Möchtest du im Restaurant essen oder das Essen geliefert bekommen?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.477063407573.34573702422",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Wie oft möchtest du {beverage} bestellen?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.50559449490.1309772713392",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Tischnummer möchtest du dem Gerät geben?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.424375498366.1298327652393",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Nach welcher Art von Gerichten möchtest du suchen?"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Order-Confirmation</title>
+
+	<style type="text/css">
+		.container {
+			width: 700px;
+			height: 100%;
+			margin: auto;
+			padding: 5px;
+			font-size: 18px;
+			font-family: Helvetica, Arial;
+		}
+
+		.header {
+			height: 50px;
+			width: 100%;
+		}
+
+		p, body, h1, div {
+			margin: 0;
+			padding: 0;
+		}
+
+		.buttonContainer {
+			text-align: center;
+		}
+
+		.resetUrl {
+			text-decoration: none;
+			width: 200px;
+			height: 30px;
+			margin: auto;
+		}
+
+		.resetButton {
+			text-align: center;
+			display: block;
+			font-size: 18px;
+			border: none;
+			border-radius: 5px;
+			background-color: #3e2723;
+			width: 200px;
+			height: 30px;
+			line-height: 30px;
+			margin: auto;
+			text-decoration: none;
+			color: white;
+		}
+
+		.resetButton:hover {
+			cursor: pointer;
+		}
+
+		.bannerImage {
+			width: 700px;
+			height: 109px;
+			margin-bottom: 20px;
+		}
+
+		.footerImage {
+			margin-top: 50px;
+			width: 700px;
+			height: 246px;
+		}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin: auto;
+		}
+
+		tr {
+			border-top: 1px solid rgba(0, 0, 0, 0.12);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+			font-size: 18px;
+		}
+
+		th {
+			font-size: 20px;
+		}
+
+		table .leftCol {
+			text-align: left;
+			padding-left: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			font-weight: 600;
+		}
+
+		table .rightCol {
+			text-align: right;
+			padding-right: 10px;
+			height: 20px;
+		}
+
+		.tableHeader {
+			text-align: center;
+			font-size: 24px;
+			margin: 30px 0px 20px 0px;
+		}
+
+		.dishCol {
+			width: 40%;
+			text-align: left;
+			padding-left: 10px;
+		}
+
+		.extrasCol {
+			width: 30%;
+			text-align: left;
+		}
+
+		.amountCol {
+			width: 15%;
+			text-align: center;
+		}
+
+		.priceCol {
+			width: 15%;
+			text-align: center;
+		}
+
+		.orderTable td, .orderTable th  {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img class="bannerImage" src='cid:myThaiStarBannerImage' width="700px" height="109px">
+		<p>Hello <span th:text="${hostName}"></span>,</p>
+		<br>
+		<p>Your order has been succesfully created!</p>
+		<p>Below you can find all details regarding your order and booking.</p>
+		<p>See you soon at the restaurant!</p>
+
+		<p class="tableHeader">Order</p>
+
+		<table class="orderTable">
+			<tr>
+				<th class="dishCol">Dish</th>
+				<th class="extrasCol">Extras</th>
+				<th class="amountCol">Amount</th>
+				<th class="priceCol">Price</th>
+			</tr>
+			<tr th:each="dishName,iterStat : ${dishNames}">
+				<td class="dishCol" th:text="${dishName}"></td>
+				<td class="extrasCol" th:text="${extras[iterStat.index]}"></td>
+				<td class="amountCol" th:text="${amounts[iterStat.index]}"></td>
+				<td class="priceCol"><span th:text="${prices[iterStat.index]}"></span><span> €</span></td>
+			</tr>
+			<tr>
+				<th class="dishCol">Total</th>
+				<td class="extrasCol"></td>
+				<td class="amountCol"></td>
+				<th class="priceCol"><span th:text="${totalPrice}"></span><span> €</span></th>
+			</tr>
+		</table>
+
+		<p class="tableHeader">Booking information</p>
+
+		<table>
+			<tr>
+				<td class="leftCol">Reservation Date</td>
+				<td class="rightCol" th:text="${date}"></td>
+			</tr>
+			<tr>
+				<td class="leftCol">Booking Token</td>
+				<td class="rightCol" th:text="${bookingToken}"></td>
+			</tr>
+			<tr>
+				<td class="leftCol">Email</td>
+				<td class="rightCol" th:text="${hostEmail}"></td>
+			</tr>
+			<tr>
+				<td class="leftCol">Name</td>
+				<td class="rightCol" th:text="${hostName}"></td>
+			</tr>
+			<tr>
+				<td class="leftCol">Attendees</td>
+				<td class="rightCol" th:text="${attendees}"></td>
+			</tr>
+		</table>
+
+
+		<br>
+		<p>Best regards,</p>
+		<p>MyThaiStar</p>
+		<img class="footerImage" src='cid:myThaiStarFooterImage' width="700px" height="246px">
+	</div>
+</body>
+</html>

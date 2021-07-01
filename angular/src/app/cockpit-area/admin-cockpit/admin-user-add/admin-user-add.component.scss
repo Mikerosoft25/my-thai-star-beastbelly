@@ -1,0 +1,61 @@
+[mat-dialog-title] {
+  text-transform: uppercase;
+}
+/*
+.subtitle-card {
+  color: lightslategrey;
+  margin-bottom: 16px;
+}
+
+.UserFormContainer {
+  width: 80%;
+}
+
+.mat-form-field {
+  width: 80%;
+}
+
+.mat-grid-list {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 25px;
+  border: 50px solid white;
+  min-height: 500px;
+}
+
+.mat-grid-tile {
+  min-height: 410px;
+}
+*/
+
+[mat-dialog-title] {
+  text-transform: uppercase;
+}
+
+.backdropBackground {
+body {background-color: #ff8080;}
+}
+
+.center {
+text-align: center;
+}
+
+.input-icon{
+  position: absolute;
+  left: 3px;
+  top: calc(50% - 0.5em); /* Keep icon in center of input, regardless of the input height */
+}
+input{
+  padding-left: 17px;
+  padding-bottom: 1.5px;
+}
+.input-wrapper{
+  position: relative;
+}
+
+mat-select, mat-label {
+  padding-left: 17px;
+}
+

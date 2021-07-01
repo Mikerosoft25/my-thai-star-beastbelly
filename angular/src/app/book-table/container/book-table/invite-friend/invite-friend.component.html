@@ -1,0 +1,150 @@
+
+<div [ngStyle]="{'display' : showBasic ? 'block' : 'none' }">
+  <mat-card id="card" class="mat-card-position" >
+
+    <mat-card-title>
+      <img src="./../../../../../assets/images/dinner1.png" alt="reset-header-fail">
+    </mat-card-title>
+
+
+  <mat-card-content class="friend-logo">
+
+      <b style="font-size: x-large;">
+        {{'inviteFriend.inviteMessage' | transloco}}
+      </b><br/>
+
+    </mat-card-content >
+  <mat-card-content style="padding-left: 20%; font-size: larger; padding-right: 20%;" >
+
+    <div class="ablock " style="text-align: center; border-spacing: 10px 2px;">
+    <table style="text-align: left; border-spacing: 5px; ">
+      <tr>
+        <td >
+          <mat-icon>person</mat-icon> <strong>{{'inviteFriend.invited' | transloco}}</strong>
+        </td>
+        <td style="width: 1%;">
+          {{name}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-icon> contact_mail</mat-icon> <strong>Email</strong>
+        </td>
+        <td>
+          {{email}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-icon>event</mat-icon> <strong>{{'inviteFriend.date' | transloco}}</strong>
+        </td>
+        <td>
+          {{bookingDate | amFromUnix |  amDateFormat: 'DD.MM.YYYY'}}
+        </td>
+      </tr>
+      <tr>
+        <td >
+          <mat-icon>schedule</mat-icon><strong>{{'inviteFriend.time' | transloco}}</strong>
+        </td>
+        <td>
+          {{bookingDate | amFromUnix |  amDateFormat: 'HH:mm'}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <mat-icon>people</mat-icon> <strong>{{'inviteFriend.assistants' | transloco}}</strong>
+        </td>
+        <td>
+          {{assistants}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br/>
+  <div style="text-align: center;">
+    {{'inviteFriend.expire' | transloco}}: <br><br>
+    <div style="font-size: x-large;">
+    <strong>{{countdown}}</strong>
+    </div>
+  </div>
+  <br/>
+
+    </mat-card-content>
+  <mat-card-content>
+    <button mat-fab (click)="accept()" color="accent">
+      <mat-icon>done</mat-icon>
+    </button>
+    <button mat-fab (click)="decline()" color="warn" style="margin-left: 10%; margin-bottom: 3%;">
+      <mat-icon>clear</mat-icon>
+    </button>
+
+
+    </mat-card-content>
+    </mat-card>
+
+
+</div>
+
+<div [ngStyle]="{'display' : showAgree ? 'block' : 'none' }">
+
+  <mat-card id="card" style="text-align: center; margin: 8%; margin-left: 27%; margin-right: 23%;" >
+
+    <mat-card-title style="padding-left: 0.5%;">
+      <img src="./../../../../../assets/images/damo-a.gif" alt="reset-header-fail" style="padding-top: 2%;">
+    </mat-card-title>
+    </mat-card>
+
+</div>
+
+<div [ngStyle]="{'display' : showDecline ? 'block' : 'none' }">
+
+  <mat-card style="text-align: center; margin: 8%; margin-left: 27%; margin-right: 23%; margin-top: 10%;" >
+
+    <mat-card-title style="padding-top: 10%;">
+      <img src="./../../../../../assets/images/dinner1.png" alt="reset-header-fail">
+    </mat-card-title>
+
+    <mat-card-content style="padding-top: 5%; padding-bottom: 10%;">
+      <p style="font-size: xx-large; font-weight: bolder;">
+        {{'inviteFriend.nextTime' | transloco}}
+      </p>
+    </mat-card-content>
+    </mat-card>
+
+</div>
+
+<div [ngStyle]="{'display' : showFailure ? 'block' : 'none' }">
+
+  <mat-card style="text-align: center; margin: 8%; margin-left: 27%; margin-right: 23%; margin-top: 10%;" >
+
+    <mat-card-title style="padding-top: 10%;">
+      <img src="./../../../../../assets/images/dinner1.png" alt="reset-header-fail">
+    </mat-card-title>
+
+    <mat-card-content style="padding-top: 5%; padding-bottom: 10%;">
+      <p style="font-size: x-large; font-weight: bolder;">
+        {{'inviteFriend.failure' | transloco}}
+      </p>
+    </mat-card-content>
+    </mat-card>
+
+</div>
+
+<div [ngStyle]="{'display' : showFailureTime ? 'block' : 'none' }">
+
+  <mat-card style="text-align: center; margin: 8%; margin-left: 27%; margin-right: 23%; margin-top: 10%;" >
+
+    <mat-card-title style="padding-top: 10%;">
+      <img src="./../../../../../assets/images/dinner1.png" alt="reset-header-fail">
+    </mat-card-title>
+
+    <mat-card-content style="padding-top: 5%; padding-bottom: 10%;">
+      <p style="font-size: x-large; font-weight: bolder;">
+        {{'inviteFriend.failureExpires' | transloco}}
+      </p>
+    </mat-card-content>
+    </mat-card>
+
+</div>
+

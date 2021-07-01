@@ -1,0 +1,307 @@
+<div class="header-container">
+  <a mat-icon-button class="forMobile" (click)="openCloseNavigationSideNav()">
+    <mat-icon>dehaze</mat-icon>
+  </a>
+  <a mat-icon-button>
+    <mat-icon>star_border</mat-icon>
+  </a>
+  <span>My Thai Star</span>
+
+  <span flex></span>
+  <div
+    *ngIf="
+      (auth.getRole() | async) === 'CUSTOMER' &&
+      (auth.isLogged() | async) === true
+    "
+    class="forDesktop"
+  >
+    <nav mat-tab-nav-bar>
+      <a
+        mat-tab-link
+        routerLink="/restaurant"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller>home </mat-icon>
+        {{ 'main.home' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/menu"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> fastfood </mat-icon>
+        {{ 'main.menu' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/bookTable"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> book </mat-icon>
+        {{ 'main.book' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/reservations-user"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> date_range </mat-icon>
+        {{ 'main.userReservations' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/orders-user"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> restaurant </mat-icon>
+        {{ 'main.userOrders' | transloco | uppercase }}
+      </a>
+    </nav>
+  </div>
+
+  <div
+    *ngIf="
+      (auth.getRole() | async) === 'CUSTOMER' &&
+      (auth.isLogged() | async) === false
+    "
+    class="forDesktop"
+  >
+    <nav mat-tab-nav-bar>
+      <a
+        mat-tab-link
+        routerLink="/restaurant"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> home </mat-icon>
+        {{ 'main.home' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/menu"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> fastfood </mat-icon>
+        {{ 'main.menu' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/bookTable"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> book </mat-icon>
+        {{ 'main.book' | transloco | uppercase }}
+      </a>
+    </nav>
+  </div>
+  <div *ngIf="(auth.getRole() | async) === 'WAITER'" class="forDesktop">
+    <nav mat-tab-nav-bar>
+      <a
+        mat-tab-link
+        routerLink="/orders"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> restaurant </mat-icon>
+        {{ 'main.orders' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/orderarchived"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> archive </mat-icon>
+        {{ 'main.orderarchived' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/reservations"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> date_range </mat-icon>
+        {{ 'main.reservations' | transloco | uppercase }}
+      </a>
+    </nav>
+  </div>
+  <!-- admin page is temporary declared for waiter -->
+  <!-- TODO: authorisation as admin for admin pages -->
+  <div *ngIf="(auth.getRole() | async) === 'ADMIN'" class="forDesktop">
+    <nav mat-tab-nav-bar>
+      <a
+        mat-tab-link
+        routerLink="/admin"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> contacts </mat-icon>
+        {{ 'main.admin.manage' | transloco | uppercase }}
+      </a>
+
+      <a
+        mat-tab-link
+        routerLink="/orderarchived"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> archive </mat-icon>
+        {{ 'main.orderarchived' | transloco | uppercase }}
+      </a>
+    </nav>
+  </div>
+  <div *ngIf="(auth.getRole() | async) === 'MANAGER'" class="forDesktop">
+    <nav mat-tab-nav-bar>
+      <a
+        mat-tab-link
+        routerLink="/orders"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> restaurant </mat-icon>
+        {{ 'main.orders' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/orderarchived"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> archive </mat-icon>
+        {{ 'main.orderarchived' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/reservations"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> date_range </mat-icon>
+        {{ 'main.reservations' | transloco | uppercase }}
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/prediction"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> timeline </mat-icon> PREDICTION
+      </a>
+      <a
+        mat-tab-link
+        routerLink="/clustering"
+        routerLinkActive="navBottomBorder"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon smaller> memory </mat-icon> CLUSTERING
+      </a>
+    </nav>
+  </div>
+
+  <button
+    name="login"
+    *ngIf="(auth.isLogged() | async) === false"
+    mat-icon-button
+    (click)="openLoginDialog()"
+    [matTooltip]="'main.userActions.user' | transloco"
+  >
+    <mat-icon>person_outline</mat-icon>
+  </button>
+  <div *ngIf="auth.logged$ | async" class="logged-in">
+    <button name="account" mat-icon-button [matMenuTriggerFor]="toolbarMenu1">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <span data-name="userNameLogged" class="forDesktop">{{
+      auth.userName$ | async
+    }}</span>
+    <button
+      class="forDesktop"
+      *ngIf="(auth.isLogged() | async) === false"
+      mat-icon-button
+      (click)="logout()"
+      [matTooltip]="'main.userActions.logout' | transloco"
+    >
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+    <mat-menu #toolbarMenu1="matMenu">
+      <button
+        name="changePassword"
+        mat-menu-item
+        type="button"
+        (click)="openResetDialog()"
+        *ngIf="(auth.getRole() | async) === 'CUSTOMER'"
+      >
+        <mat-icon>settings</mat-icon>
+        <span>{{ 'main.userActions.changePassword' | transloco }}</span>
+      </button>
+      <button
+        name="setting"
+        *ngIf="auth.logged$ | async"
+        mat-menu-item
+        type="button"
+        (click)="getQRCode()"
+      >
+        <mat-icon>important_devices</mat-icon>
+        <span>{{ 'main.userActions.pairing' | transloco }}</span>
+      </button>
+      <button
+        name="twitterAccount"
+        mat-menu-item
+        type="button"
+        (click)="openTwitterDialog()"
+        *ngIf="(auth.getRole() | async) === 'CUSTOMER'"
+      >
+        <mat-icon>send</mat-icon>
+        <span>{{ 'main.userActions.twitterAccount' | transloco }}</span>
+      </button>
+      <mat-divider></mat-divider>
+      <button name="logout" mat-menu-item type="button" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>{{ 'main.userActions.signOut' | transloco }}</span>
+      </button>
+    </mat-menu>
+  </div>
+  <button
+    *ngIf="(auth.getRole() | async) === 'CUSTOMER'"
+    name="order"
+    mat-icon-button
+    (click)="openCloseSideNav(sidenav.opened)"
+    [matTooltip]="'main.userActions.orders' | transloco"
+  >
+    <!-- TODO -->
+    <!--<mat-icon
+      [matBadge]="sidenav.getNumberOrders() | async"
+      [matBadgeHidden]="(sidenav.getNumberOrders() | async) < 1"
+      matBadgeColor="accent"
+      >shopping_basket</mat-icon
+    >-->
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  <button
+    name="language"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    matTooltip="{{ currentLang | uppercase }}"
+    matTooltipHideDelay="1000"
+  >
+    <span class="flag-icon flag-icon-{{ flag }}"></span>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button
+      name="lang.value"
+      *ngFor="let lang of selectableLangs"
+      [disabled]="currentLang === lang.value"
+      (click)="changeLanguage(lang.value)"
+      mat-menu-item
+    >
+      <span>{{ lang.label }}</span>
+    </button>
+  </mat-menu>
+</div>

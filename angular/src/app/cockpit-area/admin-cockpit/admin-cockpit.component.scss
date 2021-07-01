@@ -1,0 +1,66 @@
+table {
+  width: 100%;
+  min-width: 600px;
+}
+
+.mat-column-editButton {
+  width: 20px;
+  padding-right: 0 !important;
+}
+
+th {
+  width: 33.33%;
+  font-weight: bold;
+}
+
+.formRow {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  font-size: 16px;
+}
+
+.formDesktopRow {
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .searchBy {
+    flex: 1;
+    padding: 8px;
+  }
+}
+
+.formMobileRow {
+  flex: 1;
+  align-items: center;
+}
+
+form button,
+mat-card-title {
+  text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+  .forMobile {
+    display: none;
+  }
+  .sortingBy {
+    width: 30%;
+  }
+  .searchBy {
+    width: 30%;
+  }
+  .formDesktopRow {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+  }
+  .formMobileRow {
+    display: none;
+  }
+}

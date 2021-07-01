@@ -1,0 +1,24 @@
+{
+  "name": "my-thai-star",
+  "version": "1.0.0",
+  "description": "restaurant app skill for my thai star",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "beastbelly-Jens",
+  "license": "Apache License",
+  "dependencies": {
+    "ask-sdk-core": "^2.7.0",
+    "ask-sdk-model": "^1.19.0",
+    "aws-sdk": "^2.326.0",
+    "axios": "^0.21.1",
+    "pako": "^2.0.3",
+    "request": "^2.88.2",
+    "ask-sdk-s3-persistence-adapter": "^2.10.2",
+    "ask-sdk-dynamodb-persistence-adapter": "^2.10.2",
+    "node-fetch": "^2.6.1",
+    "i18next": "^20.2.2",
+    "i18next-sprintf-postprocessor": "^0.2.2"
+  }
+}
